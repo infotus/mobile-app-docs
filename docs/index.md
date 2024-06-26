@@ -4,6 +4,7 @@ This documentation is for Cheer Supports app IOS version.
 
 This mobile application is the application of the Cheer Supports Website. It has been developed using the web-view method to ensure familiarity and display information about the events regularly and automatically. It also has additional features to cover the minimum features and requirements of a web-view app to publish in the Apple Store.
 
+Check more details about App Review [Guidelines](https://developer.apple.com/app-store/review/guidelines/). 
 
 Application features: 
 
@@ -158,17 +159,15 @@ Others section has 3 settings one of them share the application. the other is a 
 
 
 #### Items
-Item Lists [Owned Items](img/navigation/owneditemlist.png) connect to Settings view. Divided 4 section with section header.
+Item Lists [Owned Items](img/navigation/owneditemlist.png) connect to Settings view. Divided 4 section with section header. All datas are saved in Owned Items array of users Firebase data collection. All settings effects only app view and styles, there is no effect on Cheer Supports webview also chat items cannot be use in streaming chat.
 
 1. Background; This is for chat room message area background design settings. Onclick shows a menu, if the user has any color or image will show the submenu as Color or Images, and other default and cancel options available in the menu view list. "Background" text is clickable. For better performace all Horizontal Stack view should be button. 
 
-2. Button; This is change set style for home button ui view style and also chat room top and bottom ui view. If user has any style it will shows a menu option with name.
+2. Button; This is change set style for home button ui view style and also chat room top bar and bottom bar ui view. If user has any style it will shows a menu option with name.
 
-3.
+3. Font; There are 2 settings in this section font style and font color. Onclick shows a menu, if user has any font style or color will show the name in related menu. Current font styles are not effected furigana and kanjis. Need to add new styles for both Japanese and Chinese languages and Font Style Item view in shop should also changed based on language.
 
-4.
-
-
+4. Chat Items; Currently we have emojis and animated emojis items can be used in the app chat system. It is a dropdown list and shows a list of chat items purchased as text. List items are non-clickable.
 
 
 ## Credentails

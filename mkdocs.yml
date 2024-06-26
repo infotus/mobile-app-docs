@@ -10,7 +10,7 @@ theme:
   name: material
   features:
     - navigation.tabs
-    - navigation.sections
+    # - navigation.sections
     - navigation.expand
     - navigation.prune
     - navigation.indexes

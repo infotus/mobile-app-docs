@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="Technical/">
+        <link rel="next" href="example/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -220,12 +220,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="Technical/" class="md-tabs__link">
+      <a href="example/" class="md-tabs__link">
         
   
     
   
-  Technical
+  Examples
 
       </a>
     </li>
@@ -237,12 +237,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="example/" class="md-tabs__link">
+      <a href="technical/" class="md-tabs__link">
         
   
     
   
-  Examples
+  Technical
 
       </a>
     </li>
@@ -441,6 +441,25 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#cheer-purchase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cheer Purchase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-items-purchase" class="md-nav__link">
+    <span class="md-ellipsis">
+      App Items Purchase
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="App Items Purchase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#exp-purchase" class="md-nav__link">
     <span class="md-ellipsis">
       Exp Purchase
@@ -499,12 +518,32 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#settings" class="md-nav__link">
     <span class="md-ellipsis">
       Settings
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -537,11 +576,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Technical/" class="md-nav__link">
+      <a href="example/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Technical
+    Examples
   </span>
   
 
@@ -557,11 +596,11 @@
   
   
     <li class="md-nav__item">
-      <a href="example/" class="md-nav__link">
+      <a href="technical/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Examples
+    Technical
   </span>
   
 
@@ -667,19 +706,59 @@ Users can register through website. </p>
 <p>Reward Section contain only ui views.</p>
 <p>Level up section is has 3 buttons and linked to exp card purchase view, daily tasks view and Cheer purchase view respectively.  </p>
 <h4 id="daily-tasks">Daily Tasks</h4>
-<p><a href="img/navigation/dailytasksview.png">Daily</a> is only linked to Profile view. Divided 3 main stack <a href="img/layout/dailytaskslayout.png">views</a>.  User Info section;  most of datas are retrieve from Firebase db, only cheer data value retrieve from AWS db. Daily Login section; contain UI view and related functions. Daily Missions section; Information about mission and button for collecting reward, buttons are will active when user finised the task otherwise will be inactive. Active buttons color is orange, inactive buttons color is gray.</p>
+<p><a href="img/navigation/dailytasksview.png">Daily</a> is only linked to Profile view. Divided 3 main stack <a href="img/layout/dailytaskslayout.png">views</a>.  User Info section;  most of datas are retrieve from Firebase db, only cheer data value retrieve from AWS db. Daily Login section; contain UI view and related functions. Daily Missions section; Information about mission and button for collecting reward, buttons are will active when user finised the task otherwise will be inactive. Active buttons color is orange, inactive buttons color is gray. Every task has different shop points and exp point.</p>
 <h3 id="chat-room">Chat Room</h3>
-<p><a href="img/navigation/chatroomview.png">Chat</a> is linked to <a href="img/navigation/siginview.png">Signin</a> and <a href="img/navigation/homeview.png">Home</a> through to butttons in Top section <a href="img/layout/chatroomlayout.png">view</a>. Chat section shows list of the message save in Firebase --&gt; Msgs documents. Bottom section; image picker and emokji view list hidden under plus "+" button and send button will hidden until user type any text or select any image(or emoji).  Top section and Section backgrounds are synchronized with ui button style. </p>
+<p><a href="img/navigation/chatroomview.png">Chat</a> is linked to <a href="img/navigation/siginview.png">Signin</a> and <a href="img/navigation/homeview.png">Home</a> through to butttons in Top section <a href="img/layout/chatroomlayout.png">view</a>. Chat section shows list of the message save in Firebase --&gt; Msgs documents. Bottom section; image picker and emoji view list hidden under plus "+" button and send button will hidden until user type any text or select any image(or emoji).  Top section and Section backgrounds are synchronized with ui button style. </p>
 <h3 id="cart">Cart</h3>
-<p><a href="img/navigation/shopcheerview.png">Cheer</a> ----&gt; <a href="img/navigation/shopitemview.png">Items</a></p>
-<h4 id="exp-purchase">Exp Purchase</h4>
-<h4 id="exp-multiply">Exp Multiply</h4>
-<h4 id="ui-style">UI Style</h4>
-<h4 id="font-style">Font Style</h4>
-<h4 id="emojis">Emojis</h4>
-<h4 id="animated-emojis">Animated Emojis</h4>
+<p>Shop Cart has simple stack <a href="img/layout/shopcartlayout.png">view</a> tab buttons and view sections view section. View section shows cheer purchase view (default view) and app item purchase view. The shop cart view is linked only to the home view. Other content shows as a subview using the Bottom Sheet plugin. The toolbar contains shop points and the total cheer the user has. </p>
+<h4 id="cheer-purchase">Cheer Purchase</h4>
+<p>There are 7 <a href="img/navigation/shopcheerview.png">Cheer</a> purchase products available.  500, 1000, 3000, 5000, 10000, 30000, and 50000 products are listed in view. If the user not logged in it will shows a notification. After successfulll purchase it will shows a notification.   </p>
+<h4 id="app-items-purchase">App Items Purchase</h4>
+<p>There are 6 subview exist in App Item <a href="img/navigation/shopitemview.png">View</a>. All subviews has 2 detents; medium and large.  Detents are dynamically adjusted the <a href="img/layout/shopcartlayout.png">subview</a> height. </p>
+<p>There are 3 purchase notification;</p>
+<ul>
+<li><a href="img/layout/notenough.png">Not enough</a> Cheer or shopping Point</li>
+<li><a href="img/layout/alreadyhave.png">Already have</a> item</li>
+<li><a href="img/layout/successfull.png">Successfully</a> purchased </li>
+</ul>
+<p>these notification are implemented in all app item purchase system.  </p>
+<h5 id="exp-purchase">Exp Purchase</h5>
+<p>Simple a stack <a href="img/layout/expbuylayout.png">view</a> with a purchase button. Detents set medium as default value. The maximum number of card purchases at a time has been determined as 99. </p>
+<h5 id="exp-multiply">Exp Multiply</h5>
+<p>A <a href="img/layout/expmultiplylayout.png">view</a> contain 3 stack views. Stack view contain information text and button. On button click it will show a confirmation dialog. </p>
+<h5 id="ui-style">UI Style</h5>
+<p>There are 3 main stack <a href="img/layout/uiitems.gif">views</a>. These are button styles(3 items), background images(6 items) and backround color(6 items). All items can be purchased either with Cheer or Point. On Items click will show purchase options dialog. Every item group prices are different, button styles are each 500 Cheer or 500 Point, background images are each 200 Cheer or Point and background colors are each 50 Cheer or Point. Button Styles are set with a uniqe background images and background images and background color can be used in chat room background settings.</p>
+<h5 id="font-style">Font Style</h5>
+<p>There are 2 main stack <a href="img/layout/fontstylelayout.png">views</a>.  These are font colors (6 items) and font styles(4 items). All items can be purchased either with Cheer or Point. On Items click will show purchase options dialog. Every items can be purchase  50 Cheer or 50 Point. Font style and font color can effect chat message text style. </p>
+<p>Note: Currently font style not effect logographic kanjis and furigana</p>
+<h5 id="emojis">Emojis</h5>
+<p>There are 5 items using same view model within only stack <a href="img/layout/emojilayout.png">view</a> shows a list view.<br />
+List items are clickable and show full list of the emoji group items. Items can be purhcase with cheer only and each emoji group is cost 500 cheer. On list clicked will show a <a href="img/layout/emojilistlayout.png">popover</a>. </p>
+<h5 id="animated-emojis">Animated Emojis</h5>
+<p>There are 5 items using same view model within only stack <a href="img/layout/stickerlayout.png">view</a> shows a list view.<br />
+List items are clickable and show full list of the emoji group items. Items can be purhcase with cheer only and each emoji group is cost 1000 cheer. On list clicked will show a <a href="img/layout/stickerlistlayout.mp4">popover</a>. </p>
 <h3 id="settings">Settings</h3>
-<p><a href="img/navigation/settingsview.png">Settings</a> ----&gt; Item Lists <a href="img/navigation/owneditemlist.png">Owned Items</a></p>
+<p><a href="img/navigation/settingsview.png">Settings</a> is connected Home and Item views. Settings is divided for 3 sections. </p>
+<ol>
+<li>General</li>
+<li>Blocked User </li>
+<li>Others</li>
+</ol>
+<p>General section currently contain only owned items. Can find more detals in Items (Navigate to Items).</p>
+<p>Blocked Users has only list of the blocked users.</p>
+<p>Others section has 3 settings one of them share the application. the other is a toogle for showing level log in chat room view. When user reach level 2 it will automaticly will turn on. And last one is delete the account; this settings is required to publish the application in App Store. Delete the account is requests the deletion of data from both Firebase and AWS databases. </p>
+<h4 id="items">Items</h4>
+<p>Item Lists <a href="img/navigation/owneditemlist.png">Owned Items</a> connect to Settings view. Divided 4 section with section header.</p>
+<ol>
+<li>
+<p>Background; This is for chat room message area background design settings. Onclick shows a menu, if the user has any color or image will show the submenu as Color or Images, and other default and cancel options available in the menu view list. "Background" text is clickable. For better performace all Horizontal Stack view should be button. </p>
+</li>
+<li>
+<p>Button; This is change set style for home button ui view style and also chat room top and bottom ui view. If user has any style it will shows a menu option with name.</p>
+</li>
+</ol>
+<p>3.</p>
+<p>4.</p>
 <h2 id="credentails">Credentails</h2>
 
 
@@ -735,7 +814,7 @@ Users can register through website. </p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.prune", "navigation.indexes", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.ad660dcc.min.js"></script>
