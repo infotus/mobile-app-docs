@@ -41,6 +41,15 @@ AWS Database datails add later
 */
 
 
+Operation System: MacOS
+
+IDE: Xcode
+
+Programming Language: Swift
+
+Framework: SwiftUI
+
+
 ## Commands
 - Either use this step 
 Install GitHub Desktop software [MacOS](https://central.github.com/deployments/desktop/desktop/latest/darwin)    
@@ -180,7 +189,7 @@ All of these suggestions are for better user experience and better app performan
     2. By decreasing task requests before the app launch.
     3. Better user experiences add a loading image or some images can hide the loading process. Hide the image when webview is fully loaded.
 
--  Animated Emojis consume too much RAM therefore certain views need attention. Global Chat, ShopView/Animated Emojis view are currently usage pages. 
+-  Animated Emojis consume too much RAM therefore certain views need attention. Global Chat, ShopView/Animated Emojis view are currently using SDWebImageSwiftui. 
     1. Show limited messages in history of the messages.
     2. Play once or twice animated images. 
     3. On tap gesture play selected emojis animation.
@@ -200,7 +209,7 @@ All of these suggestions are for better user experience and better app performan
 
 
 ### New Features
+- 
 
 
-
-## Credentails
+<!-- ## Credentails -->
