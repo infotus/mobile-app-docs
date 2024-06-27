@@ -553,6 +553,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#future-of-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future of App
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future of App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updates-required-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updates Required Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#credentails" class="md-nav__link">
     <span class="md-ellipsis">
       Credentails
@@ -628,6 +661,7 @@
 <h2 id="overview">Overview</h2>
 <p>This documentation is for Cheer Supports app IOS version.</p>
 <p>This mobile application is the application of the Cheer Supports Website. It has been developed using the web-view method to ensure familiarity and display information about the events regularly and automatically. It also has additional features to cover the minimum features and requirements of a web-view app to publish in the Apple Store.</p>
+<p>Check more details about App Review <a href="https://developer.apple.com/app-store/review/guidelines/">Guidelines</a>. </p>
 <p>Application features: </p>
 <ul>
 <li>In app login system</li>
@@ -706,7 +740,7 @@ Users can register through website. </p>
 <p>Reward Section contain only ui views.</p>
 <p>Level up section is has 3 buttons and linked to exp card purchase view, daily tasks view and Cheer purchase view respectively.  </p>
 <h4 id="daily-tasks">Daily Tasks</h4>
-<p><a href="img/navigation/dailytasksview.png">Daily</a> is only linked to Profile view. Divided 3 main stack <a href="img/layout/dailytaskslayout.png">views</a>.  User Info section;  most of datas are retrieve from Firebase db, only cheer data value retrieve from AWS db. Daily Login section; contain UI view and related functions. Daily Missions section; Information about mission and button for collecting reward, buttons are will active when user finised the task otherwise will be inactive. Active buttons color is orange, inactive buttons color is gray. Every task has different shop points and exp point.</p>
+<p><a href="img/navigation/dailytasksview.png">Daily</a> is only linked to Profile view. Divided 3 main stack <a href="img/layout/dailytaskslayout.png">views</a>.  User Info section;  most of datas are retrieve from Firebase database, only cheer data value retrieve from AWS database. Daily Login section; contain UI view and related functions. Daily Missions section; Information about mission and button for collecting reward, buttons are will active when user finised the task otherwise will be inactive. Active buttons color is orange, inactive buttons color is gray. Every task has different shop points and exp point.</p>
 <h3 id="chat-room">Chat Room</h3>
 <p><a href="img/navigation/chatroomview.png">Chat</a> is linked to <a href="img/navigation/siginview.png">Signin</a> and <a href="img/navigation/homeview.png">Home</a> through to butttons in Top section <a href="img/layout/chatroomlayout.png">view</a>. Chat section shows list of the message save in Firebase --&gt; Msgs documents. Bottom section; image picker and emoji view list hidden under plus "+" button and send button will hidden until user type any text or select any image(or emoji).  Top section and Section backgrounds are synchronized with ui button style. </p>
 <h3 id="cart">Cart</h3>
@@ -748,17 +782,64 @@ List items are clickable and show full list of the emoji group items. Items can 
 <p>Blocked Users has only list of the blocked users.</p>
 <p>Others section has 3 settings one of them share the application. the other is a toogle for showing level log in chat room view. When user reach level 2 it will automaticly will turn on. And last one is delete the account; this settings is required to publish the application in App Store. Delete the account is requests the deletion of data from both Firebase and AWS databases. </p>
 <h4 id="items">Items</h4>
-<p>Item Lists <a href="img/navigation/owneditemlist.png">Owned Items</a> connect to Settings view. Divided 4 section with section header.</p>
+<p>Item Lists <a href="img/navigation/owneditemlist.png">Owned Items</a> connect to Settings view. Divided 4 section with section header. All datas are saved in Owned Items array of users Firebase data collection. All settings effects only app view and styles, there is no effect on Cheer Supports webview also chat items cannot be use in streaming chat.</p>
 <ol>
 <li>
 <p>Background; This is for chat room message area background design settings. Onclick shows a menu, if the user has any color or image will show the submenu as Color or Images, and other default and cancel options available in the menu view list. "Background" text is clickable. For better performace all Horizontal Stack view should be button. </p>
 </li>
 <li>
-<p>Button; This is change set style for home button ui view style and also chat room top and bottom ui view. If user has any style it will shows a menu option with name.</p>
+<p>Button; This is change set style for home button ui view style and also chat room top bar and bottom bar ui view. If user has any style it will shows a menu option with name.</p>
+</li>
+<li>
+<p>Font; There are 2 settings in this section font style and font color. Onclick shows a menu, if user has any font style or color will show the name in related menu. Current font styles are not effected furigana and kanjis. Need to add new styles for both Japanese and Chinese languages and Font Style Item view in shop should also changed based on language.</p>
+</li>
+<li>
+<p>Chat Items; Currently we have emojis and animated emojis items can be used in the app chat system. It is a dropdown list and shows a list of chat items purchased as text. List items are non-clickable.</p>
 </li>
 </ol>
-<p>3.</p>
-<p>4.</p>
+<h2 id="future-of-app">Future of App</h2>
+<p>There are a couple of features that need to be added and some that need to be updated for better app quality. It will be divided into 2 sections New Features and Updates Required Features. Couldn't put the app in stress tests. Based on my testing some features consume too much RAM for example animated emojis in the empty chat consume an average 30 mb when adding images or animated emojis it will rise to 100 mb. By following SDWebImageSwiftUI documentation instructions for cache managing decrease ram usage to 70 mb. Need additional measurements to further decrease for better performance. Some features need to be added (some of them are requested from the client). </p>
+<h3 id="updates-required-features">Updates Required Features</h3>
+<p>All of these suggestions are for better user experience and better app performance.  Feel free to implement solutions If you notice different issue(s) or have better solutions. Overall we are developers, and building the best products is our first task.</p>
+<ul>
+<li>
+<p>Webview is loading slowly. Excluding external reasons (non-app related reasons like wireless connection speed, connection signal quality, mobile phone CPU speed, RAM capacity of the phone, IOS version, etc.) there are multiple solutions to improve app quality. </p>
+<ol>
+<li>Webview app speed is directly linked to website performance. Therefore improve website load speed.</li>
+<li>By decreasing task requests before the app launch.</li>
+<li>Better user experiences add a loading image or some images can hide the loading process. Hide the image when webview is fully loaded.</li>
+</ol>
+</li>
+<li>
+<p>Animated Emojis consume too much RAM therefore certain views need attention. Global Chat, ShopView/Animated Emojis view are currently usage pages. </p>
+<ol>
+<li>Show limited messages in history of the messages.</li>
+<li>Play once or twice animated images. </li>
+<li>On tap gesture play selected emojis animation.</li>
+<li>Stop playing all animated emojis when the user saw the list.  </li>
+</ol>
+</li>
+<li>
+<p>Change the Full design of Shop Cart View. The current Bottom Sheet plugin response is not good enough.</p>
+<ol>
+<li>Change the bottom sheet view system to a navigation link system.</li>
+<li>Native sheet detents (medium and large) options are available IOS version 16.0 or later. Either change the minimum target version from 15.1 to 16.0 to create a dynamic detents system.  </li>
+</ol>
+</li>
+<li>
+<p>Add more emojis.</p>
+</li>
+<li>
+<p>Add more animated emojis.</p>
+</li>
+<li>
+<p>Add more UI styles. Current font styles are working on romaji letters, add more font styles, especially for furigana and kanji. </p>
+</li>
+<li>
+<p>Update settings UI view with better design.</p>
+</li>
+</ul>
+<h3 id="new-features">New Features</h3>
 <h2 id="credentails">Credentails</h2>
 
 
@@ -814,7 +895,7 @@ List items are clickable and show full list of the emoji group items. Items can 
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.prune", "navigation.indexes", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.expand", "navigation.prune", "navigation.indexes", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.ad660dcc.min.js"></script>

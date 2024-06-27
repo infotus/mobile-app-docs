@@ -97,7 +97,7 @@ Reward Section contain only ui views.
 Level up section is has 3 buttons and linked to exp card purchase view, daily tasks view and Cheer purchase view respectively.  
 
 #### Daily Tasks
-[Daily](img/navigation/dailytasksview.png) is only linked to Profile view. Divided 3 main stack [views](img/layout/dailytaskslayout.png).  User Info section;  most of datas are retrieve from Firebase db, only cheer data value retrieve from AWS db. Daily Login section; contain UI view and related functions. Daily Missions section; Information about mission and button for collecting reward, buttons are will active when user finised the task otherwise will be inactive. Active buttons color is orange, inactive buttons color is gray. Every task has different shop points and exp point.
+[Daily](img/navigation/dailytasksview.png) is only linked to Profile view. Divided 3 main stack [views](img/layout/dailytaskslayout.png).  User Info section;  most of datas are retrieve from Firebase database, only cheer data value retrieve from AWS database. Daily Login section; contain UI view and related functions. Daily Missions section; Information about mission and button for collecting reward, buttons are will active when user finised the task otherwise will be inactive. Active buttons color is orange, inactive buttons color is gray. Every task has different shop points and exp point.
 
 ### Chat Room
 [Chat](img//navigation/chatroomview.png) is linked to [Signin](img/navigation/siginview.png) and [Home](img/navigation/homeview.png) through to butttons in Top section [view](img/layout/chatroomlayout.png). Chat section shows list of the message save in Firebase --> Msgs documents. Bottom section; image picker and emoji view list hidden under plus "+" button and send button will hidden until user type any text or select any image(or emoji).  Top section and Section backgrounds are synchronized with ui button style. 
@@ -168,6 +168,39 @@ Item Lists [Owned Items](img/navigation/owneditemlist.png) connect to Settings v
 3. Font; There are 2 settings in this section font style and font color. Onclick shows a menu, if user has any font style or color will show the name in related menu. Current font styles are not effected furigana and kanjis. Need to add new styles for both Japanese and Chinese languages and Font Style Item view in shop should also changed based on language.
 
 4. Chat Items; Currently we have emojis and animated emojis items can be used in the app chat system. It is a dropdown list and shows a list of chat items purchased as text. List items are non-clickable.
+
+## Future of App 
+There are a couple of features that need to be added and some that need to be updated for better app quality. It will be divided into 2 sections New Features and Updates Required Features. Couldn't put the app in stress tests. Based on my testing some features consume too much RAM for example animated emojis in the empty chat consume an average 30 mb when adding images or animated emojis it will rise to 100 mb. By following SDWebImageSwiftUI documentation instructions for cache managing decrease ram usage to 70 mb. Need additional measurements to further decrease for better performance. Some features need to be added (some of them are requested from the client). 
+
+### Updates Required Features
+All of these suggestions are for better user experience and better app performance.  Feel free to implement solutions If you notice different issue(s) or have better solutions. Overall we are developers, and building the best products is our first task.
+
+-  Webview is loading slowly. Excluding external reasons (non-app related reasons like wireless connection speed, connection signal quality, mobile phone CPU speed, RAM capacity of the phone, IOS version, etc.) there are multiple solutions to improve app quality. 
+    1. Webview app speed is directly linked to website performance. Therefore improve website load speed.
+    2. By decreasing task requests before the app launch.
+    3. Better user experiences add a loading image or some images can hide the loading process. Hide the image when webview is fully loaded.
+
+-  Animated Emojis consume too much RAM therefore certain views need attention. Global Chat, ShopView/Animated Emojis view are currently usage pages. 
+    1. Show limited messages in history of the messages.
+    2. Play once or twice animated images. 
+    3. On tap gesture play selected emojis animation.
+    4. Stop playing all animated emojis when the user saw the list.  
+
+- Change the Full design of Shop Cart View. The current Bottom Sheet plugin response is not good enough.
+    1. Change the bottom sheet view system to a navigation link system.
+    2. Native sheet detents (medium and large) options are available IOS version 16.0 or later. Either change the minimum target version from 15.1 to 16.0 to create a dynamic detents system.  
+    
+- Add more emojis.
+
+- Add more animated emojis.
+
+- Add more UI styles. Current font styles are working on romaji letters, add more font styles, especially for furigana and kanji. 
+
+- Update settings UI view with better design.
+
+
+### New Features
+
 
 
 ## Credentails
