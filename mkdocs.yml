@@ -2,6 +2,10 @@ site_name: Cheer Supports IOS App Documentation
 plugins:
   - search
   - open-in-new-tab
+
+extra_css:
+  - style.css
+
 theme:
   nav:
   - Home: index.md
@@ -10,7 +14,7 @@ theme:
   name: material
   features:
     - navigation.tabs
-    # - navigation.sections
+    - navigation.sections
     - navigation.expand
     - navigation.prune
     - navigation.indexes
