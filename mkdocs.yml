@@ -3,8 +3,16 @@ plugins:
   - search
   - open-in-new-tab
 
-extra_css:
-  - style.css
+extra:
+  generator: false
+  social:
+  - icon: fontawesome/brands/github
+    link: https://github.com/infotus
+  # - icon: fontawesome/brands/linkedin
+  #   link: https://github.com/infotus
+  
+
+copyright: Created by infotus
 
 theme:
   nav:
@@ -13,13 +21,13 @@ theme:
   - Examples: example.md
   name: material
   features:
+    - navigation.top
     - navigation.tabs
     - navigation.sections
     - navigation.expand
     - navigation.prune
     - navigation.indexes
     - toc.integrate
-    - navigation.top
     - search.suggest
     - search.highlight
     - content.tabs.link
