@@ -37,11 +37,6 @@ Capabitilities :
 - In-App Purchase
 - Push Notification
 
-/*
-Firebase Details add later
-AWS Database datails add later
-*/
-
 
 Operation System: MacOS
 
@@ -227,6 +222,8 @@ All of these suggestions are for better user experience and better app performan
 
 - Update settings UI view with better design.
 
+- Replace the webview system with an application-specific system with new ui design and with synchronized current website database.
+
 
 
 ### New Features
@@ -254,7 +251,3 @@ All of these suggestions are for better user experience and better app performan
 
  - Add noice cancelling feature to live-streaming.
 
-
-
-
-## Credentails

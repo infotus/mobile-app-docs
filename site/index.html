@@ -44,6 +44,8 @@
       
     
     
+      <link rel="stylesheet" href="style.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -585,15 +587,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#credentails" class="md-nav__link">
-    <span class="md-ellipsis">
-      Credentails
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -685,10 +678,10 @@
 <li>In-App Purchase</li>
 <li>Push Notification</li>
 </ul>
-<p>/<em>
-Firebase Details add later
-AWS Database datails add later
-</em>/</p>
+<p>Operation System: MacOS</p>
+<p>IDE: Xcode</p>
+<p>Programming Language: Swift</p>
+<p>Framework: SwiftUI</p>
 <h2 id="commands">Commands</h2>
 <ul>
 <li>
@@ -811,7 +804,7 @@ List items are clickable and show full list of the emoji group items. Items can 
 </ol>
 </li>
 <li>
-<p>Animated Emojis consume too much RAM therefore certain views need attention. Global Chat, ShopView/Animated Emojis view are currently usage pages. </p>
+<p>Animated Emojis consume too much RAM therefore certain views need attention. Global Chat, ShopView/Animated Emojis view are currently using SDWebImageSwiftui. </p>
 <ol>
 <li>Show limited messages in history of the messages.</li>
 <li>Play once or twice animated images. </li>
@@ -838,9 +831,36 @@ List items are clickable and show full list of the emoji group items. Items can 
 <li>
 <p>Update settings UI view with better design.</p>
 </li>
+<li>
+<p>Replace the webview system with an application-specific system with new ui design and with synchronized current website database.</p>
+</li>
 </ul>
 <h3 id="new-features">New Features</h3>
-<h2 id="credentails">Credentails</h2>
+<p>Before explaining new features there are a few points that need to mention. Before started developing the mobile application there was a conversation about changing Cheer Support web content. At first idea was a full renewal of the web content and then middle of development it is changed to re-design. Those are 2 different approaches. Because of the uncertainty mobile app structure becomes more restricted.</p>
+<p>Renewal is changing all structures, API routes, UI design, and database of the web content. Anything related back-end will directly affect the mobile application.  </p>
+<p>Redesigning, on the other hand, affects the user's view of web content. While this approach has a potential impact on the backend, it will be limited and, therefore on impact the mobile app also limited. </p>
+<p>Members who could work were limited. I worked with only one graphic designer on this project. He creates most of the images, emojis and animated emojis, the rest is done solely by me. There was only one front-end developer in the web content, but she was working as a full-stack developer. So working with her also was out of the option.</p>
+<p>There were requests from the CEO and client. Most of them are already done and there are 2 features left to implement for finishing the app. There are preparations to be made before adding these features, as well as the completion of the redesign of the website and the completion of the back-end related new design.</p>
+<ul>
+<li>
+<p>At the time of writing this document, there were 7 WebGL applications in the web content. All WebGL applications are developed with a cross-platform called <a href="https://unity.com/">Unity Game Engine</a>. These applications do not work on mobile browsers and the CEO requested that these applications be available on mobile devices. To achieve this those are the preparations required;</p>
+<ol>
+<li>Convert to WebGL application to IOS application</li>
+<li>Optimized the app for mobile (for example occlusion culling, lightmap, decrease the RAM usage ...)</li>
+<li>Add UI and controller system for mobile app use</li>
+<li>Decrease the size of the app (There is a maximum size limit to upload the App Store)</li>
+</ol>
+</li>
+</ul>
+<p>The above steps should be followed for 6 applications. WebGL applications called Hoshiyomi are already published on the App Store and Play Store.</p>
+<ul>
+<li>
+<p>Add the Augmented Reality future with body and face tracking to the live-streaming feature. </p>
+</li>
+<li>
+<p>Add noice cancelling feature to live-streaming.</p>
+</li>
+</ul>
 
 
 
@@ -895,7 +915,7 @@ List items are clickable and show full list of the emoji group items. Items can 
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.expand", "navigation.prune", "navigation.indexes", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.prune", "navigation.indexes", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.ad660dcc.min.js"></script>
