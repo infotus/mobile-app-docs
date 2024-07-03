@@ -14,9 +14,13 @@
 
 6. Realtime messages are handled by Firebase.
 
-7. User Daily Login informations are handled by Firebase.
+7. User Daily Login informations are handled by Firebase, all information mobile application usage related only.
 
-8. 
+8. New User registration can be done webview only. 
+
+9. Webview datas are handled by AWS.
+
+10. 
 
 ## Key Features
 
