@@ -12,6 +12,8 @@
         <link rel="prev" href="../example/">
       
       
+        <link rel="next" href="../about/license/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
@@ -249,6 +251,26 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../about/license/" class="md-tabs__link">
+          
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -377,11 +399,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#key-features" class="md-nav__link">
     <span class="md-ellipsis">
       Key Features
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Key Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webview-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webview Feature
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webview Feature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webview-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      WebView Script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webviewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      WebViewModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apiservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      APIService
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountserviceviewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      AccountServiceViewModel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -438,6 +526,56 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../about/license/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -454,22 +592,38 @@
 
 
 <h1 id="technical">Technical</h1>
-<p>There are 4 main key points need mention. </p>
+<h2 id="specification">Specification</h2>
 <ol>
 <li>
-<p>Webview </p>
+<p>This application developed on IOS 15.1 - 17.4 - using Swift / Objective-C - with SwiftUI framework</p>
 </li>
 <li>
-<p>Global Chat</p>
+<p>This applicaiton is intended for use smartphone only, in a portrait orientation.</p>
 </li>
 <li>
-<p>Dailly Login Tracking</p>
+<p>JSON requests are used to handle the communication between the app and servers.</p>
 </li>
 <li>
-<p>In App Purhcase</p>
+<p>This application works only in online mode.</p>
 </li>
+<li>
+<p>Push notifications are handled by Firebase.</p>
+</li>
+<li>
+<p>Realtime messages are handled by Firebase.</p>
+</li>
+<li>
+<p>User Daily Login informations are handled by Firebase.</p>
+</li>
+<li></li>
 </ol>
 <h2 id="key-features">Key Features</h2>
+<h3 id="webview-feature">Webview Feature</h3>
+<p>To show that Cheer Supports web content on mobile I used an open-source web browser engine called Webkit. WebKit is a browser engine primarily used in Apple's Safari web browser, as well as all web browsers on iOS and iPadOS. Cheer Supports web content is changing frequently and to keep up with the web content updates webview was the best choice. All scripts related webview is separeated from the others and they under 'Webservices' folder. Folder contain "WebView", "WebViewModel", "APIService" and AccountServiceViewModel script files. </p>
+<h4 id="webview-script">WebView Script</h4>
+<h4 id="webviewmodel">WebViewModel</h4>
+<h4 id="apiservice">APIService</h4>
+<h4 id="accountserviceviewmodel">AccountServiceViewModel</h4>
 <h2 id="services">Services</h2>
 <h2 id="databases">Databases</h2>
 <h2 id="apis">API's</h2>
