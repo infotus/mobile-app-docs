@@ -19,6 +19,10 @@ theme:
   - Home: index.md
   - Technical: technical.md
   - Examples: example.md
+  - About:
+    - 'License': 'license.md'
+    - 'Release Notes': 'release-notes.md'
+
   name: material
   features:
     - navigation.top
