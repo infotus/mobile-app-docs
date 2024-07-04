@@ -30,7 +30,7 @@
 To show that Cheer Supports web content on mobile I used an open-source web browser engine called Webkit. WebKit is a browser engine primarily used in Apple's Safari web browser, as well as all web browsers on iOS and iPadOS. Cheer Supports web content is changing frequently and to keep up with the web content updates webview was the best choice. All scripts related webview is separeated from the others and they under 'Webservices' folder. Folder contain "WebView", "WebViewModel", "APIService" and AccountServiceViewModel script files. 
 
 #### WebView Script
-
+It is UIViewPresentable struck including delegates.  
 
 #### WebViewModel
 
