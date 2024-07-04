@@ -12,15 +12,16 @@
 
 5. Push notifications are handled by Firebase.
 
-6. Realtime messages are handled by Firebase.
+6. Real-time messages are handled by Firebase.
 
 7. User Daily Login informations are handled by Firebase, all information mobile application usage related only.
 
 8. New User registration can be done webview only. 
 
-9. Webview datas are handled by AWS.
+9. Webview datas are handled by AWS
 
-10. 
+10. In app purchase system is implemented the mobile application only
+
 
 ## Key Features
 
@@ -29,8 +30,6 @@
 To show that Cheer Supports web content on mobile I used an open-source web browser engine called Webkit. WebKit is a browser engine primarily used in Apple's Safari web browser, as well as all web browsers on iOS and iPadOS. Cheer Supports web content is changing frequently and to keep up with the web content updates webview was the best choice. All scripts related webview is separeated from the others and they under 'Webservices' folder. Folder contain "WebView", "WebViewModel", "APIService" and AccountServiceViewModel script files. 
 
 #### WebView Script
-
-
 
 
 #### WebViewModel
