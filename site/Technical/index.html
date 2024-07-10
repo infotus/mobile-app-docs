@@ -659,21 +659,7 @@
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#technical-documentation-for-loginviewmodelswift" class="md-nav__link">
-    <span class="md-ellipsis">
-      Technical Documentation for LoginViewModel.swift
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Technical Documentation for LoginViewModel.swift">
+    <nav class="md-nav" aria-label="AccountServiceViewModel">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -686,13 +672,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#class-accountserviceviewmodel" class="md-nav__link">
+  <a href="#class_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Class: AccountServiceViewModel
+      Class
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Class: AccountServiceViewModel">
+    <nav class="md-nav" aria-label="Class">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -733,6 +719,11 @@
       Considerations
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1166,12 +1157,11 @@ Methods</p>
 </ul>
 <p>This documentation provides an overview of Webservice.swift, detailing its purpose, methods, routes, and considerations for effective usage in the "Cheer Supports" application.</p>
 <h4 id="accountserviceviewmodel">AccountServiceViewModel</h4>
-<h3 id="technical-documentation-for-loginviewmodelswift">Technical Documentation for LoginViewModel.swift</h3>
-<h4 id="overview_2">Overview</h4>
-<p>The <code>LoginViewModel.swift</code> file serves as a view model in the "Cheer Supports" application, managing user authentication, data retrieval from APIs, and state management for user-related information. It utilizes Swift's Combine framework for reactive programming and asynchronous operations.</p>
-<h4 id="class-accountserviceviewmodel">Class: AccountServiceViewModel</h4>
+<h5 id="overview_2">Overview</h5>
+<p>The <code>AccountServiceViewModel.swift</code> file serves as a view model in the "Cheer Supports" application, managing user authentication, data retrieval from APIs, and state management for user-related information. It utilizes Swift's Combine framework for reactive programming and asynchronous operations.</p>
+<h5 id="class_2">Class</h5>
 <p>The <code>AccountServiceViewModel</code> class encapsulates methods and properties to facilitate user authentication, data fetching, and management of user session state.</p>
-<h5 id="properties_2">Properties</h5>
+<h6 id="properties_2">Properties</h6>
 <ul>
 <li><strong><code>isAuthenticated</code></strong>: Tracks whether the user is authenticated.</li>
 <li><strong><code>nick_name</code></strong>: Stores the user's nickname.</li>
@@ -1184,7 +1174,7 @@ Methods</p>
 <li><strong><code>channel_id</code></strong>: Stores the ID of the user's channel.</li>
 <li><strong><code>follow</code></strong>: Stores the count of users followed by the current user.</li>
 </ul>
-<h5 id="methods_4">Methods</h5>
+<h6 id="methods_4">Methods</h6>
 <ul>
 <li>
 <p><strong><code>login(email:password:)</code></strong>:</p>
@@ -1297,7 +1287,7 @@ Methods</p>
 </ul>
 </li>
 </ul>
-<h4 id="usage-example">Usage Example</h4>
+<h5 id="usage-example">Usage Example</h5>
 <p>Below is an example demonstrating how to use the <code>AccountServiceViewModel</code> class:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">let</span> <span class="nv">viewModel</span> <span class="p">=</span> <span class="n">AccountServiceViewModel</span><span class="p">()</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -1319,14 +1309,14 @@ Methods</p>
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="p">}</span>
 <a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="p">}</span>
 </code></pre></div>
-<h4 id="considerations_2">Considerations</h4>
+<h5 id="considerations_2">Considerations</h5>
 <ul>
 <li>Ensure proper error handling for asynchronous operations and API requests.</li>
 <li>Use Combine framework for reactive updates to UI based on state changes.</li>
 <li>Validate inputs (like email and password) before making API requests.</li>
 <li>Test thoroughly under various network conditions and scenarios to ensure reliability.</li>
 </ul>
-<p>This documentation provides an overview of <code>LoginViewModel.swift</code>, detailing its purpose, methods, properties, and considerations for effective usage in the "Cheer Supports" application.</p>
+<p>This documentation provides an overview of <code>AccountServiceViewModel.swift</code>, detailing its purpose, methods, properties, and considerations for effective usage in the "Cheer Supports" application.</p>
 <h2 id="services">Services</h2>
 <h2 id="databases">Databases</h2>
 <h2 id="apis">API's</h2>
