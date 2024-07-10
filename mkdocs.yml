@@ -17,9 +17,20 @@ copyright: Created by infotus
 theme:
   nav:
   - Home: index.md
-  - Technical: technical.md
+
+  - Technical:
+    - 'Introduction': '0tech-intro.md'
+    - 'Webview': 1webview.md
+    - 'Services': 2services.md
+    - 'Databases': 3databases.md
+    - 'API Documentation': 4api.md
+    - 'Functions': 5func.md
+    - 'Other': 6other.md
+
   - Examples: example.md
+
   - About: 
+    - Intrudoction: intro.md  
     - 'License': 'license.md'
     - 'Release Notes': 'release-notes.md'
 
