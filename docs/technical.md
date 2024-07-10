@@ -275,17 +275,15 @@ This documentation provides an overview of Webservice.swift, detailing its purpo
 
 #### AccountServiceViewModel
 
-### Technical Documentation for LoginViewModel.swift
+##### Overview
 
-#### Overview
+The `AccountServiceViewModel.swift` file serves as a view model in the "Cheer Supports" application, managing user authentication, data retrieval from APIs, and state management for user-related information. It utilizes Swift's Combine framework for reactive programming and asynchronous operations.
 
-The `LoginViewModel.swift` file serves as a view model in the "Cheer Supports" application, managing user authentication, data retrieval from APIs, and state management for user-related information. It utilizes Swift's Combine framework for reactive programming and asynchronous operations.
-
-#### Class: AccountServiceViewModel
+##### Class
 
 The `AccountServiceViewModel` class encapsulates methods and properties to facilitate user authentication, data fetching, and management of user session state.
 
-##### Properties
+###### Properties
 
 - **`isAuthenticated`**: Tracks whether the user is authenticated.
 - **`nick_name`**: Stores the user's nickname.
@@ -298,7 +296,7 @@ The `AccountServiceViewModel` class encapsulates methods and properties to facil
 - **`channel_id`**: Stores the ID of the user's channel.
 - **`follow`**: Stores the count of users followed by the current user.
 
-##### Methods
+###### Methods
 
 - **`login(email:password:)`**:
     - **Purpose**: Initiates user login using provided email and password.
@@ -368,7 +366,7 @@ The `AccountServiceViewModel` class encapsulates methods and properties to facil
     - **Throws**: Handles errors from `APIService().getLastStreaming` method.
     - **Description**: Asynchronously checks if the user's live stream is active today using `isToday` method.
 
-#### Usage Example
+##### Usage Example
 
 Below is an example demonstrating how to use the `AccountServiceViewModel` class:
 
@@ -394,14 +392,14 @@ async {
 }
 ```
 
-#### Considerations
+##### Considerations
 
 - Ensure proper error handling for asynchronous operations and API requests.
 - Use Combine framework for reactive updates to UI based on state changes.
 - Validate inputs (like email and password) before making API requests.
 - Test thoroughly under various network conditions and scenarios to ensure reliability.
 
-This documentation provides an overview of `LoginViewModel.swift`, detailing its purpose, methods, properties, and considerations for effective usage in the "Cheer Supports" application.
+This documentation provides an overview of `AccountServiceViewModel.swift`, detailing its purpose, methods, properties, and considerations for effective usage in the "Cheer Supports" application.
 
 ## Services 
 
