@@ -3,6 +3,7 @@ plugins:
   - search
   - open-in-new-tab
 
+
 extra:
   generator: false
   social:
@@ -19,30 +20,30 @@ theme:
   - Home: index.md
 
   - Technical:
-    - 'Introduction': '0tech-intro.md'
-    - 'Webview': 1webview.md
-    - 'Services': 2services.md
-    - 'Databases': 3databases.md
-    - 'API Documentation': 4api.md
-    - 'Functions': 5func.md
-    - 'Other': 6other.md
+    - technical/0tech-intro.md
+    - Webview: technical/1webview.md
+    - Services: technical/2services.md
+    - Databases: technical/3databases.md
+    - API Documentation: technical/4api.md
+    - Functions: technical/5func.md
+    - Other: technical/6other.md
 
   - Examples: example.md
 
   - About: 
-    - Intrudoction: intro.md  
-    - 'License': 'license.md'
-    - 'Release Notes': 'release-notes.md'
+    - about/intro.md  
+    - License: about/license.md
+    - Release Notes : about/release-notes.md
 
   name: material
   features:
     - navigation.top
     - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - navigation.prune
+    # - navigation.sections
+    # - navigation.expand
+    # - navigation.prune
     - navigation.indexes
-    - toc.integrate
+    # - toc.integrate
     - search.suggest
     - search.highlight
     - content.tabs.link

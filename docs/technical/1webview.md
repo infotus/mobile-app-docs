@@ -1,10 +1,9 @@
 # WebView
 
-### Key Features
+#### Overview
 
 To show that Cheer Supports web content on mobile I used an open-source web browser engine called Webkit. WebKit is a browser engine primarily used in Apple's Safari web browser, as well as all web browsers on iOS and iPadOS. Cheer Supports web content is changing frequently and to keep up with the web content updates webview was the best choice. All scripts related webview is separeated from the others and they under 'Webservices' folder. Folder contain "WebView", "WebViewModel", "APIService" and AccountServiceViewModel script files. 
 
-#### Overview
 The WebView struct is a SwiftUI component designed to display web content using WKWebView, which is part of the WebKit framework. It integrates into SwiftUI views to render web pages specified by a URL and provides functionality for observing URL changes, handling navigation, and interacting with JavaScript.
 
 ##### Struct: WebView
