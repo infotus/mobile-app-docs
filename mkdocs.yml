@@ -22,7 +22,15 @@ theme:
   - Technical:
     - technical/0tech-intro.md
     - Webview: technical/1webview.md
-    - Services: technical/2services.md
+    - Services: 
+      - technical/2services.md
+      - Firebase: 
+        - technical/firebase/1firebaseintro.md
+        - Authentication: technical/firebase/2auth.md
+        - Cloud Storage: technical/firebase/3storage.md
+        - Cloud Messaging: technical/firebase/4messaging.md
+        - Cloud Firestore: technical/firebase/5firestore.md
+      - AWS: technical/aws/1awsintro.md
     - Databases: technical/3databases.md
     - API Documentation: technical/4api.md
     - Functions: technical/5func.md
@@ -34,6 +42,8 @@ theme:
     - about/intro.md  
     - License: about/license.md
     - Release Notes : about/release-notes.md
+    - Page1: about/page1/page1.md
+    - Page2: about/page2/page2.md
 
   name: material
   features:
