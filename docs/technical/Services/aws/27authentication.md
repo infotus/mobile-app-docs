@@ -1,5 +1,30 @@
 # Authentication
 
+## API Requests for Web Content Authentication
+
+### Overview
+
+To authenticate web content access, the application utilizes two API requests. These requests are implemented in `APIService.swift` and `SignInViewModel.swift`, each serving distinct purposes in the authentication process.
+
+### API Request Functions
+
+#### `APIService.swift`
+
+The `APIService.swift` script manages API interactions related to web content authentication. Specifically, the `getLoginData()` function within this script handles authentication by retrieving necessary data from external sources. Additionally, `APIService.swift` manages the storage and processing of user-related parameters essential for authentication.
+
+#### `SignInViewModel.swift`
+
+In contrast, `SignInViewModel.swift` focuses solely on authentication verification. It utilizes an API request to verify user credentials and validate access to web content. This component does not handle parameter storage but rather concentrates on the authentication process itself.
+
+### Functional Roles
+
+- **APIService.swift**: Responsible for retrieving authentication data and managing user parameters required for authentication purposes.
+- **SignInViewModel.swift**: Concentrates on user authentication verification, ensuring secure access to web content through API interactions.
+
+### Integration Details
+
+- **Usage**: Utilize `APIService.swift` for fetching login data and managing user parameters. Refer to `SignInViewModel.swift` for executing authentication checks and validating user access based on retrieved credentials.
+
 ## SignInViewModel
 
 ### Overview

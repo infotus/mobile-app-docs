@@ -17,7 +17,10 @@ copyright: Created by infotus
 
 theme:
   nav:
-  - Home: index.md
+  - Home: 
+    - general/0index.md
+    - Project Layout: general/1layout.md
+    - Future of App: general/2future.md
 
   - Technical:
     - technical/0tech-intro.md
