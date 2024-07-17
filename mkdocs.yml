@@ -17,8 +17,9 @@ copyright: Created by infotus
 
 theme:
   nav:
-  - Home: 
-    - general/0index.md
+  - Home: index.md
+
+  - General:
     - Project Layout: general/1layout.md
     - Future of App: general/2future.md
 
@@ -30,9 +31,9 @@ theme:
       - Firebase: 
         - technical/firebase/1firebaseintro.md
         - Authentication: technical/firebase/2auth.md
-        - Cloud Storage: technical/firebase/3storage.md
-        - Cloud Messaging: technical/firebase/4messaging.md
-        - Cloud Firestore: technical/firebase/5firestore.md
+        - Storage: technical/firebase/3storage.md
+        - Messaging: technical/firebase/4messaging.md
+        - Firestore: technical/firebase/5firestore.md
       - AWS: technical/aws/1awsintro.md
     - Databases: technical/3databases.md
     - API Documentation: technical/4api.md

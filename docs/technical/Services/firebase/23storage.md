@@ -1,1 +1,92 @@
-# Cloud Storage
+# Storage
+
+### Overview
+
+This document provides an overview of how Firebase Storage is integrated into our iOS application to handle file storage and retrieval.
+
+### Features
+
+- **File Upload**: Users can upload various types of files (images, videos, documents) to Firebase Storage.
+- **File Download**: Users can download files previously uploaded to Firebase Storage.
+- **Security Rules**: Firebase Security Rules are implemented to restrict access to files based on user authentication and authorization.
+
+### Usage
+
+#### File Upload
+
+1. **Upload Task**
+    - Use `StorageReference` to get a reference to the file in Firebase Storage.
+    - Use `putFile` or `putData` methods to upload files.
+
+   ```swift
+   let storage = Storage.storage()
+   let storageRef = storage.reference()
+
+   // Local file you want to upload
+   let localFile = URL(fileURLWithPath: "path/to/local/file")
+
+   // Create a reference to the file you want to upload
+   let fileRef = storageRef.child("path/to/destination/file")
+
+   // Upload file to Firebase Storage
+   let uploadTask = fileRef.putFile(from: localFile, metadata: nil) { metadata, error in
+       guard let metadata = metadata else {
+           // Handle error
+           return
+       }
+       // Metadata contains file metadata such as size, content-type, etc.
+   }
+   ```
+
+#### File Download
+
+1. **Download Task**
+     - Use `getData` or `write` methods to download files from Firebase Storage.
+ 
+
+   ```swift
+   // Reference to an image file in Firebase Storage
+   let storageRef = Storage.storage().reference(withPath: "path/to/file")
+
+   // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+   storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+       if let error = error {
+           // Handle any errors
+       } else {
+           // Data for "path/to/file" is returned
+           let image = UIImage(data: data!)
+           // Use the image
+       }
+   }
+   ```
+
+#### Security Rules
+
+1. **Firebase Console**
+    - Security rules in the Firebase Console under "Storage".
+
+    ```plaintext
+    service firebase.storage {
+        match /b/{bucket}/o {
+            match /{allPaths=**} {
+                allow read, write: if request.auth != null;
+            }
+        }
+    }
+    ```
+
+<!-- ### Conclusion -->
+
+This document has outlined the usage of Firebase Storage in our iOS application for file upload, download, and security rules implementation. For further details, refer to the Firebase documentation at [Firebase Storage Documentation](https://firebase.google.com/docs/storage).
+
+
+### Files Structure
+
+There are 6 file folder exist in storage. These are 
+    - Animated Emoji 
+    - Background
+    - Button Image
+    - Chat Images
+    - Emoji
+    - Levels Logo
+

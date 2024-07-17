@@ -1,5 +1,9 @@
 # Overview
 
+Here's an improved version for technical documentation:
+
+We are utilizing Firebase services under the free tier plan, which comes with certain usage limitations. To stay within these limits, it is essential to implement several measures. For instance, optimizing image and data sizes to reduce consumption, minimizing daily request volumes, and so on.
+
 ## FirebaseManager Class
 
 The `FirebaseManager` class provides a centralized management of Firebase services for authentication, cloud storage, real-time database, and Firestore within an iOS application built using SwiftUI. This documentation explains the structure of the class, its initialization, and the Firebase services it manages.

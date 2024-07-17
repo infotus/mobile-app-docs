@@ -1,1 +1,1 @@
-# Cloud Firestore
+# Firestore
