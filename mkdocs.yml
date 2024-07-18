@@ -2,6 +2,9 @@ site_name: Cheer Supports IOS App Documentation
 plugins:
   - search
   - open-in-new-tab
+  - mkdocs-nav-weight:
+      section_renamed: false
+
 
 
 extra:
@@ -35,12 +38,16 @@ theme:
         - Messaging: technical/firebase/4messaging.md
         - Firestore: technical/firebase/5firestore.md
       - AWS: technical/aws/1awsintro.md
+      - Daily Login Tracking: technical/Services/daily/daily.md
+      - Global Chat: technical/Services/chat/chat.md
+      - In App Purchase: technical/Services/IAP/iap.md
+    
     - Databases: technical/3databases.md
     - API Documentation: technical/4api.md
     - Functions: technical/5func.md
     - Other: technical/6other.md
 
-  - Examples: example.md
+  # - Examples: example.md
 
   - About: 
     - about/intro.md  
