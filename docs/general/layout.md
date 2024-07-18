@@ -1,3 +1,8 @@
+---
+title: Project Layout
+weight: 0
+---
+
 # Project Layout
 
 [This](../img/navigation/fullnavigation.png) is full navigation layout

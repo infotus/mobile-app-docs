@@ -1,3 +1,8 @@
+---
+title: Authentication
+weight: 1
+---
+
 # Authentication
 
 The application employs two authentication systems to manage user access and functionality securely.

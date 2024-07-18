@@ -1,3 +1,8 @@
+---
+title: Storage
+weight: 2
+---
+
 # Storage
 
 ### Overview

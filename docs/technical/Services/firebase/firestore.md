@@ -1,3 +1,8 @@
+---
+title: Firestore
+weight: 4
+---
+
 # Firestore
 
 ## 1. Introduction

@@ -1,7 +1,6 @@
 ---
 title: In App Purchase
-weight: 5
-retitled: true
+weight: 3
 ---
 
 # In App Purchase

@@ -1,3 +1,7 @@
+---
+title: Future of App
+weight: 1
+---
 # Future of App
 
 There are a couple of features that need to be added and some that need to be updated for better app quality. It will be divided into 2 sections New Features and Updates Required Features. Couldn't put the app in stress tests. Based on my testing some features consume too much RAM for example animated emojis in the empty chat consume an average 30 mb when adding images or animated emojis it will rise to 100 mb. By following SDWebImageSwiftUI documentation instructions for cache managing decrease ram usage to 70 mb. Need additional measurements to further decrease for better performance. Some features need to be added (some of them are requested from the client). 

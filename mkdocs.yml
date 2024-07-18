@@ -16,21 +16,21 @@ extra:
   #   link: https://github.com/infotus
   
 
-copyright: Created by infotus
+copyright: Made with Material for Mkdocs
 
 theme:
   nav:
   - Home: index.md
 
   - General:
-    - Project Layout: general/1layout.md
-    - Future of App: general/2future.md
+    - Project Layout: general/layout.md
+    - Future of App: general/future.md
 
   - Technical:
-    - technical/0tech-intro.md
-    - Webview: technical/1webview.md
+    - technical/tech-intro.md
+    - Webview: technical/webview.md
     - Services: 
-      - technical/2services.md
+      - technical/services/services.md
       - Firebase: 
         - technical/firebase/1firebaseintro.md
         - Authentication: technical/firebase/2auth.md
@@ -42,10 +42,10 @@ theme:
       - Global Chat: technical/Services/chat/chat.md
       - In App Purchase: technical/Services/IAP/iap.md
     
-    - Databases: technical/3databases.md
-    - API Documentation: technical/4api.md
-    - Functions: technical/5func.md
-    - Other: technical/6other.md
+    - Databases: technical/databases.md
+    - API Documentation: technical/api.md
+    - Functions: technical/func.md
+    - Other: technical/other.md
 
   # - Examples: example.md
 
