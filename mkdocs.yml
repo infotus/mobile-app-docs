@@ -32,11 +32,11 @@ theme:
     - Services: 
       - technical/services/services.md
       - Firebase: 
-        - technical/firebase/1firebaseintro.md
-        - Authentication: technical/firebase/2auth.md
-        - Storage: technical/firebase/3storage.md
-        - Messaging: technical/firebase/4messaging.md
-        - Firestore: technical/firebase/5firestore.md
+        - technical/firebase/firebaseintro.md
+        - Authentication: technical/firebase/auth.md
+        - Storage: technical/firebase/storage.md
+        - Messaging: technical/firebase/messaging.md
+        - Firestore: technical/firebase/firestore.md
       - AWS: technical/aws/1awsintro.md
       - Daily Login Tracking: technical/Services/daily/daily.md
       - Global Chat: technical/Services/chat/chat.md
