@@ -41,8 +41,16 @@ This document provides a technical guide for iOS developers involved in the deve
 - **Firebase**: Backend-as-a-Service platform for authentication, database (Firestore), and cloud functions.
 
 ### Architecture Overview
+
 The app follows the Model-View-ViewModel (MVVM) design pattern:
-- **Model**: Data models for user profiles, login records.
-- **View**: Interface elements designed using SwiftUI framework.
-- **ViewModel**: Logic to manage user interactions and data flow.
+
+- **Model**: Data models for user profiles, login records. The Model in MVVM represents the data and business logic of the application. It is responsible for retrieving data, processing it, and defining how the data can be changed and manipulated.
+
+- **View**: Interface elements designed using SwiftUI framework. The View is responsible for defining the structure, layout, and appearance of what users see on the screen.
+
+- **ViewModel**: Logic to manage user interactions and data flow. The ViewModel in MVVM architecture serves as a bridge between the Model and the View. It's responsible for handling the logic for the UI and acts as an abstraction of the View, which contains a View's state and behavior.
+
+
+
+
 

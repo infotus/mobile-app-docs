@@ -38,7 +38,7 @@ theme:
         - Messaging: technical/firebase/messaging.md
         - Firestore: technical/firebase/firestore.md
       - AWS: technical/aws/1awsintro.md
-      - Daily Login Tracking: technical/Services/daily/daily.md
+      - Daily Login Tracking: technical/Services/daily/reward.md
       - Global Chat: technical/Services/chat/chat.md
       - In App Purchase: technical/Services/IAP/iap.md
     

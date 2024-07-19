@@ -1,6 +1,6 @@
 ---
-title: Global Chat
+title: In App Chat
 weight: 2
 ---
 
-# Global Chat
+# In App Chat
