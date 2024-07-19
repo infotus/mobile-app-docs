@@ -20,7 +20,7 @@
     
     
       
-        <title>Daily Login Tracking - Cheer Supports IOS App Documentation</title>
+        <title>Rewards System - Cheer Supports IOS App Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#daily-login-tracking" class="md-skip">
+        <a href="#rewards-system" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Daily Login Tracking
+              Rewards System
             
           </span>
         </div>
@@ -971,7 +971,7 @@
           
   
   <span class="md-ellipsis">
-    Daily Login Tracking
+    Rewards System
   </span>
   
 
@@ -982,7 +982,7 @@
         
   
   <span class="md-ellipsis">
-    Daily Login Tracking
+    Rewards System
   </span>
   
 
@@ -1004,26 +1004,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-introduction" class="md-nav__link">
+  <a href="#ways-to-earn-rewards" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Introduction
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Introduction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#daily-consecutive-login-rewards" class="md-nav__link">
-    <span class="md-ellipsis">
-      Daily Consecutive Login Rewards
+      Ways to Earn Rewards
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#daily-consecutive-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      Daily Consecutive Login
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daily-mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Daily Mission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level Rewards
+    </span>
+  </a>
   
 </li>
       
@@ -1047,7 +1059,7 @@
         
   
   <span class="md-ellipsis">
-    Global Chat
+    In App Chat
   </span>
   
 
@@ -1225,26 +1237,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-introduction" class="md-nav__link">
+  <a href="#ways-to-earn-rewards" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Introduction
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Introduction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#daily-consecutive-login-rewards" class="md-nav__link">
-    <span class="md-ellipsis">
-      Daily Consecutive Login Rewards
+      Ways to Earn Rewards
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#daily-consecutive-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      Daily Consecutive Login
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daily-mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Daily Mission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level Rewards
+    </span>
+  </a>
   
 </li>
       
@@ -1263,17 +1287,51 @@
                   
 
 
-<h1 id="daily-login-tracking">Daily Login Tracking</h1>
-<h2 id="1-introduction">1. Introduction</h2>
+<h1 id="rewards-system">Rewards System</h1>
+<h3 id="ways-to-earn-rewards">Ways to Earn Rewards</h3>
+<p>There are three ways for users to earn rewards:</p>
+<ol>
+<li>
+<p><strong>Daily Consecutive Login Rewards</strong>: Users receive rewards for logging in consecutively each day. Missing a day resets the consecutive login count in Firebase Firestore. The rewards for each day are:</p>
 <ul>
-<li><strong>Daily Consecutive Login Rewards</strong>: Users receive rewards for logging in consecutively each day.</li>
-<li>Interactive elements for logging in daily, viewing streak progress, and claiming rewards.</li>
+<li>Day 1: 25 experience points (exp) and shopping points</li>
+<li>Day 2: A random font color</li>
+<li>Day 3: 50 exp and shopping points</li>
+<li>Day 4: A random background color</li>
+<li>Day 5: 100 exp and shopping points</li>
+<li>Day 6: 1-day exp multiplier</li>
+<li>Day 7: 50 cheer coins</li>
 </ul>
-<h3 id="daily-consecutive-login-rewards">Daily Consecutive Login Rewards</h3>
+</li>
+<li>
+<p><strong>Daily Mission Rewards</strong>: There are 7 daily missions (tasks) that users can complete to earn exp points and Shopping points. It's important to collect points promptly after completing each mission, as points do not accumulate if not collected. The missions include:</p>
 <ul>
-<li><strong>Logic</strong>: Calculate and update consecutive login streaks.</li>
-<li><strong>Rewards</strong>: Award users with incentives based on streak milestones.</li>
+<li>Comment once in chat</li>
+<li>Watch a live-stream </li>
+<li>Follow a streamer</li>
+<li>Send a gift to a streamer</li>
+<li>Share the app</li>
+<li>Start a live-stream</li>
+<li>Purchase cheer coins</li>
 </ul>
+</li>
+</ol>
+<p>Each mission offers different rewards and points.</p>
+<ol>
+<li><strong>Level Rewards</strong>: Users automatically level up when they accumulate enough points. The rewards for reaching specific levels are:<ul>
+<li>Level 2: Option to hide or show the level logo in chat</li>
+<li>Level 5: A random item from the item shop</li>
+<li>Level 10: Exp multiplier for 3 days</li>
+<li>Level 15: A random UI skin</li>
+<li>Level 20: A random font style</li>
+<li>Level 25: A random emoji package</li>
+<li>Level 30: A random animated emoji package</li>
+</ul>
+</li>
+</ol>
+<h3 id="daily-consecutive-login">Daily Consecutive Login</h3>
+<h3 id="daily-mission">Daily Mission</h3>
+<h3 id="level-rewards">Level Rewards</h3>
 
 
 

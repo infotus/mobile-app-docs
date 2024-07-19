@@ -33,7 +33,6 @@ This document provides a technical guide for iOS developers involved in the deve
 - iOS Developers
 - Project Managers
 
-## 2. System Overview
 
 ### Technology Stack
 - **iOS SDK**: Development platform for building native iOS applications.
