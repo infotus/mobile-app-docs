@@ -18,7 +18,7 @@ There are three ways for users to earn rewards:
     - Day 6: 1-day exp multiplier
     - Day 7: 50 cheer coins
 
-2. **Daily Mission Rewards**: There are 7 daily missions (tasks) that users can complete to earn exp points and Shopping points. It's important to collect points promptly after completing each mission, as points do not accumulate if not collected. The missions include:
+2. **Daily Mission Rewards**: There are 7 daily missions (tasks) that users can complete to earn exp points and shopping points. Each mission offers different rewards and points. It's important to collect points promptly after completing each mission, as points do not accumulate if not collected. The missions include:
     - Comment once in chat
     - Watch a live-stream 
     - Follow a streamer
@@ -26,8 +26,6 @@ There are three ways for users to earn rewards:
     - Share the app
     - Start a live-stream
     - Purchase cheer coins
-
-   Each mission offers different rewards and points.
 
 3. **Level Rewards**: Users automatically level up when they accumulate enough points. The rewards for reaching specific levels are:
     - Level 2: Option to hide or show the level logo in chat
@@ -40,6 +38,7 @@ There are three ways for users to earn rewards:
 
 
 ### Daily Consecutive Login 
+
 
 ### Daily Mission
 
