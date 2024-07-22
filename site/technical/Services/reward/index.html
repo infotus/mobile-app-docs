@@ -1023,27 +1023,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-update-daily-login-and-consecutive-login-logic" class="md-nav__link">
+  <a href="#update-daily-login-and-consecutive-login-logic" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Update Daily Login and Consecutive Login Logic
+      Update Daily Login and Consecutive Login Logic
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-rewards-system-integration" class="md-nav__link">
+  <a href="#rewards-system-integration" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Rewards System Integration
+      Rewards System Integration
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-reset-consecutive-login-count" class="md-nav__link">
+  <a href="#reset-consecutive-login-count" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Reset Consecutive Login Count
+      Reset Consecutive Login Count
     </span>
   </a>
   
@@ -1304,27 +1304,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-update-daily-login-and-consecutive-login-logic" class="md-nav__link">
+  <a href="#update-daily-login-and-consecutive-login-logic" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Update Daily Login and Consecutive Login Logic
+      Update Daily Login and Consecutive Login Logic
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-rewards-system-integration" class="md-nav__link">
+  <a href="#rewards-system-integration" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Rewards System Integration
+      Rewards System Integration
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-reset-consecutive-login-count" class="md-nav__link">
+  <a href="#reset-consecutive-login-count" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Reset Consecutive Login Count
+      Reset Consecutive Login Count
     </span>
   </a>
   
@@ -1434,7 +1434,7 @@
 <p><strong>Cheer_SupportsApp.swift Task</strong>: The startup task responsible for initializing app components.</p>
 </li>
 </ol>
-<h4 id="1-update-daily-login-and-consecutive-login-logic">1. Update Daily Login and Consecutive Login Logic</h4>
+<h4 id="update-daily-login-and-consecutive-login-logic">Update Daily Login and Consecutive Login Logic</h4>
 <p>The following functions illustrate how the application updates the consecutive login count based on user activities:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Update consecutive login count based on last login date comparison</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">func</span> <span class="nf">updateDailyLogin</span><span class="p">()</span> <span class="p">{</span>
@@ -1481,7 +1481,7 @@
 <a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>        <span class="p">}</span>
 <a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="p">}</span>
 </code></pre></div>
-<h4 id="2-rewards-system-integration">2. Rewards System Integration</h4>
+<h4 id="rewards-system-integration">Rewards System Integration</h4>
 <p>Based on the consecutive login count, users receive rewards, all related functions are in <code>MissionPage.swift</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">let</span> <span class="nv">userInfoVM</span> <span class="p">=</span> <span class="n">FirebaseUserViewModel</span><span class="p">()</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -1516,7 +1516,7 @@
 <a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    <span class="p">}</span>
 <a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="p">}</span>
 </code></pre></div>
-<h4 id="3-reset-consecutive-login-count">3. Reset Consecutive Login Count</h4>
+<h4 id="reset-consecutive-login-count">Reset Consecutive Login Count</h4>
 <p>When the user logs in consecutively for 7 days, the application resets the consecutive login count:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Reset consecutive login count if it exceeds 6</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">func</span> <span class="nf">resetConsecutiveLogin</span><span class="p">()</span> <span class="p">{</span>
