@@ -46,7 +46,7 @@ In our application, consecutive login tracking is a crucial feature handled by t
 2. **Cheer_SupportsApp.swift Task**: The startup task responsible for initializing app components.
 
 
-#### 1. Update Daily Login and Consecutive Login Logic
+#### Update Daily Login and Consecutive Login Logic
 
 The following functions illustrate how the application updates the consecutive login count based on user activities:
 
@@ -97,7 +97,7 @@ func updateConsecutiveLogin(increment: Int) {
 }
 ```
 
-#### 2. Rewards System Integration
+#### Rewards System Integration
 
 Based on the consecutive login count, users receive rewards, all related functions are in `MissionPage.swift`:
 
@@ -136,7 +136,7 @@ let userInfoVM = FirebaseUserViewModel()
 }
 ```
 
-#### 3. Reset Consecutive Login Count
+#### Reset Consecutive Login Count
 
 When the user logs in consecutively for 7 days, the application resets the consecutive login count:
 
