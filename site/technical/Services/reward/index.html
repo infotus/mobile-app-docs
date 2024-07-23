@@ -1553,17 +1553,83 @@
 <h4 id="activation-of-collect-button-upon-task-completion">Activation of 'Collect' Button Upon Task Completion</h4>
 <p>Button activation is managed through the Observable object <code>MissionViewModel.swift</code>, specifically using the public variable <code>disabledButton</code>, which is an array (<code>Array&lt;Bool&gt;</code>).</p>
 <p>Upon completing a task, the respective button is automatically activated. The following details how each task completion corresponds to button activation within the script:</p>
-<ul>
-<li><code>disabledButton[0]</code>: Activates the "Send a message" mission button in the Global Chat View.</li>
-<li><code>disabledButton[1]</code>: Activates the "Watch livestream" mission button in the Content View within the <code>.task</code> function of the view.</li>
-<li><code>disabledButton[2]</code>: Activates the "Follow a streamer" mission button in the Profile Page View. It checks the user's follower count when the URL changes and sets the initial value.</li>
-<li><code>disabledButton[3]</code>: Activates the "Send a gift" mission button in the Content View.</li>
-<li><code>disabledButton[4]</code>: Activates the "Share the app" mission button in the Settings Menu.</li>
-<li><code>disabledButton[5]</code>: Activates the "Start live stream" mission button in the Content View.</li>
-<li><code>disabledButton[6]</code>: Activates the "Purchase Cheer Coin" mission button in the CheerItemPurchase view.</li>
-</ul>
+<p><strong>Mission 1</strong>
+- <code>disabledButton[0]</code>: Activates the "Send a message" mission button in the Global Chat View.</p>
+<p><strong>Mission 2</strong>
+- <code>disabledButton[1]</code>: Activates the "Watch livestream" mission button in the Content View within the <code>.task</code> function of the view.</p>
+<p><strong>Mission 3</strong>
+- <code>disabledButton[2]</code>: Activates the "Follow a streamer" mission button in the Profile Page View. It checks the user's follower count when the URL changes and sets the initial value.</p>
+<p><strong>Mission 4</strong>
+- <code>disabledButton[3]</code>: Activates the "Send a gift" mission button in the Content View.</p>
+<p><strong>Mission 5</strong>
+- <code>disabledButton[4]</code>: Activates the "Share the app" mission button in the Settings Menu.</p>
+<p><strong>Mission 6</strong>
+- <code>disabledButton[5]</code>: Activates the "Start live stream" mission button in the Content View.</p>
+<p><strong>Mission 7</strong>
+- <code>disabledButton[6]</code>: Activates the "Purchase Cheer Coin" mission button in the CheerItemPurchase view.</p>
 <p>This mechanism ensures that users can easily collect their rewards once they have completed the required missions.</p>
 <h3 id="level-rewards">Level Rewards</h3>
+<p>There are a total of 30 levels. When a user levels up, the following function updates the corresponding database value and checks if the level qualifies for a reward. If so, the function initiates the reward reception process.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>  <span class="c1">// When user level up get new logo, level cap information and update totalExp value</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="kd">func</span> <span class="nf">updateLevel</span><span class="p">(){</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">uid</span> <span class="p">=</span> <span class="n">FirebaseManager</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">auth</span><span class="p">.</span><span class="n">currentUser</span><span class="p">?.</span><span class="n">uid</span> <span class="k">else</span> <span class="p">{</span><span class="k">return</span><span class="p">}</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="c1">// Get current level</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="n">getUserData</span><span class="p">(</span><span class="n">parameterName</span><span class="p">:</span> <span class="n">UserInfoConstants</span><span class="p">.</span><span class="n">level</span><span class="p">)</span> <span class="p">{</span> <span class="n">level</span> <span class="k">in</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            <span class="kd">var</span> <span class="nv">user_level</span> <span class="p">=</span> <span class="n">level</span> <span class="k">as</span><span class="p">!</span> <span class="nb">Int</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            <span class="c1">// Get current level cap</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>            <span class="kc">self</span><span class="p">.</span><span class="n">getLevelData</span><span class="p">(</span><span class="n">level</span><span class="p">:</span> <span class="s">&quot;</span><span class="si">\(</span><span class="n">user_level</span><span class="si">)</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">parameterName</span><span class="p">:</span> <span class="n">LevelConstants</span><span class="p">.</span><span class="n">cap</span><span class="p">)</span> <span class="p">{</span> <span class="n">cap</span> <span class="k">in</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                <span class="kd">let</span> <span class="nv">level_cap</span> <span class="p">=</span> <span class="n">cap</span> <span class="k">as</span><span class="p">!</span> <span class="nb">Int</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                <span class="c1">// Get current exp</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>                <span class="kc">self</span><span class="p">.</span><span class="n">getUserData</span><span class="p">(</span><span class="n">parameterName</span><span class="p">:</span> <span class="n">UserInfoConstants</span><span class="p">.</span><span class="n">totalExp</span><span class="p">)</span> <span class="p">{</span> <span class="n">exp</span> <span class="k">in</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>                    <span class="kd">let</span> <span class="nv">total_exp</span> <span class="p">=</span> <span class="n">exp</span> <span class="k">as</span><span class="p">!</span> <span class="nb">Int</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                    <span class="k">if</span> <span class="n">total_exp</span> <span class="o">&gt;=</span> <span class="n">level_cap</span> <span class="p">{</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                        <span class="n">user_level</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>                        <span class="c1">// Get level reward</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>                        <span class="kc">self</span><span class="p">.</span><span class="n">getLevelReward</span><span class="p">(</span><span class="n">level</span><span class="p">:</span> <span class="n">user_level</span><span class="p">)</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>                        <span class="c1">// Reset total exp value</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>                        <span class="n">FirebaseManager</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">firestore</span><span class="p">.</span><span class="n">collection</span><span class="p">(</span><span class="n">FirebaseCollectionConstants</span><span class="p">.</span><span class="n">users</span><span class="p">).</span><span class="n">document</span><span class="p">(</span><span class="n">uid</span><span class="p">).</span><span class="n">updateData</span><span class="p">([</span><span class="n">UserInfoConstants</span><span class="p">.</span><span class="n">totalExp</span> <span class="p">:</span> <span class="n">total_exp</span><span class="o">-</span><span class="n">level_cap</span><span class="p">])</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>                        <span class="n">FirebaseManager</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">firestore</span><span class="p">.</span><span class="n">collection</span><span class="p">(</span><span class="n">FirebaseCollectionConstants</span><span class="p">.</span><span class="n">users</span><span class="p">).</span><span class="n">document</span><span class="p">(</span><span class="n">uid</span><span class="p">).</span><span class="n">updateData</span><span class="p">([</span><span class="n">UserInfoConstants</span><span class="p">.</span><span class="n">level</span> <span class="p">:</span> <span class="n">user_level</span><span class="p">])</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>                        <span class="kc">self</span><span class="p">.</span><span class="n">getLevelData</span><span class="p">(</span><span class="n">level</span><span class="p">:</span> <span class="s">&quot;</span><span class="si">\(</span><span class="n">user_level</span><span class="si">)</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">parameterName</span><span class="p">:</span> <span class="n">LevelConstants</span><span class="p">.</span><span class="n">logo</span><span class="p">)</span> <span class="p">{</span> <span class="n">logo</span> <span class="k">in</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>                            <span class="kc">self</span><span class="p">.</span><span class="n">levelLogo</span> <span class="p">=</span> <span class="n">logo</span> <span class="k">as</span><span class="p">!</span> <span class="nb">String</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>                        <span class="p">}</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>                        <span class="c1">// Get new level information and update binding values</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>                        <span class="kc">self</span><span class="p">.</span><span class="n">getCurrentLevelData</span><span class="p">()</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>                    <span class="p">}</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>                <span class="p">}</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>            <span class="p">}</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>        <span class="p">}</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>    <span class="p">}</span>
+</code></pre></div>
+<p>Below function calling related level reward function.</p>
+<p>Certainly! Here's an improved version:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// This function calls the corresponding reward function based on the user&#39;s level.</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">func</span> <span class="nf">getLevelReward</span><span class="p">(</span><span class="n">level</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">switch</span> <span class="n">level</span> <span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>            <span class="n">levelLabelReward</span><span class="p">()</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>            <span class="n">randomItemReward</span><span class="p">()</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="k">case</span> <span class="mi">10</span><span class="p">:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            <span class="n">doubleEXPReward</span><span class="p">()</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="k">case</span> <span class="mi">15</span><span class="p">:</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            <span class="n">uiSkinRewards</span><span class="p">()</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        <span class="k">case</span> <span class="mi">20</span><span class="p">:</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>            <span class="n">fontStyleReward</span><span class="p">()</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        <span class="k">case</span> <span class="mi">25</span><span class="p">:</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>            <span class="n">emojiReward</span><span class="p">()</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        <span class="k">default</span><span class="p">:</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>            <span class="k">break</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span class="p">}</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="p">}</span>
+</code></pre></div>
+<p>You can find this function in <code>FirebaseUserInfoViewModel.swift</code>. </p>
 
 
 
