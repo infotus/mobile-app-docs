@@ -190,17 +190,100 @@ Button activation is managed through the Observable object `MissionViewModel.swi
 
 Upon completing a task, the respective button is automatically activated. The following details how each task completion corresponds to button activation within the script:
 
+**Mission 1**
 - `disabledButton[0]`: Activates the "Send a message" mission button in the Global Chat View.
+
+**Mission 2**
 - `disabledButton[1]`: Activates the "Watch livestream" mission button in the Content View within the `.task` function of the view.
+
+**Mission 3**
 - `disabledButton[2]`: Activates the "Follow a streamer" mission button in the Profile Page View. It checks the user's follower count when the URL changes and sets the initial value.
+
+**Mission 4**
 - `disabledButton[3]`: Activates the "Send a gift" mission button in the Content View.
+
+**Mission 5**
 - `disabledButton[4]`: Activates the "Share the app" mission button in the Settings Menu.
+
+**Mission 6**
 - `disabledButton[5]`: Activates the "Start live stream" mission button in the Content View.
+
+**Mission 7**
 - `disabledButton[6]`: Activates the "Purchase Cheer Coin" mission button in the CheerItemPurchase view.
 
 
 This mechanism ensures that users can easily collect their rewards once they have completed the required missions.
 
 
-
 ### Level Rewards
+
+There are a total of 30 levels. When a user levels up, the following function updates the corresponding database value and checks if the level qualifies for a reward. If so, the function initiates the reward reception process.
+
+```swift
+  // When user level up get new logo, level cap information and update totalExp value
+    func updateLevel(){
+        
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
+        
+        // Get current level
+        getUserData(parameterName: UserInfoConstants.level) { level in
+            var user_level = level as! Int
+            // Get current level cap
+            self.getLevelData(level: "\(user_level)", parameterName: LevelConstants.cap) { cap in
+                let level_cap = cap as! Int
+                // Get current exp
+                self.getUserData(parameterName: UserInfoConstants.totalExp) { exp in
+                    let total_exp = exp as! Int
+                    
+                    if total_exp >= level_cap {
+                        user_level += 1
+
+                        // Get level reward
+                        self.getLevelReward(level: user_level)
+                        // Reset total exp value
+                        FirebaseManager.shared.firestore.collection(FirebaseCollectionConstants.users).document(uid).updateData([UserInfoConstants.totalExp : total_exp-level_cap])
+                        FirebaseManager.shared.firestore.collection(FirebaseCollectionConstants.users).document(uid).updateData([UserInfoConstants.level : user_level])
+                        
+                        self.getLevelData(level: "\(user_level)", parameterName: LevelConstants.logo) { logo in
+                            self.levelLogo = logo as! String
+                        }
+                        // Get new level information and update binding values
+                        self.getCurrentLevelData()
+
+                    }
+                    
+                }
+            }
+        }
+    }
+
+```
+
+Below function calling related level reward function.
+
+Certainly! Here's an improved version:
+
+```swift
+// This function calls the corresponding reward function based on the user's level.
+func getLevelReward(level: Int) {
+    switch level {
+        case 2:
+            levelLabelReward()
+        case 5:
+            randomItemReward()
+        case 10:
+            doubleEXPReward()
+        case 15:
+            uiSkinRewards()
+        case 20:
+            fontStyleReward()
+        case 25:
+            emojiReward()
+        default:
+            break
+    }
+}
+```
+
+You can find this function in `FirebaseUserInfoViewModel.swift`. 
+
