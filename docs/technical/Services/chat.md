@@ -116,17 +116,136 @@ The `ChatRow` struct represents a SwiftUI view used for displaying chat messages
 ```swift
 struct ContentView: View {
     @EnvironmentObject var msgMenuModel = MsgMenuModel()
+    ...
+    ...
+    ...
+
 
     var body: some View {
         List(msgMenuModel.msgs) { msg in
             ChatRow(chatData: msg)
                 .environmentObject(MsgMenuModel())
+                ...
+                ...
+                ...
         }
     }
 }
 ```
 
-- Ensure `AccountServiceViewModel`, `SettingBindingValues`, `MsgMenuModel`, and `FirebaseUserInfoViewModel` are properly initialized and accessible as `EnvironmentObjects`.
-- Utilize `AsyncImage` for efficient loading and caching of user profile images.
-- Manage state changes (`blocked`, `hidden`, `logo`) asynchronously using `await` to ensure smooth UI updates.
-- Handle user interactions (blocking, reporting, message management) securely and efficiently with Firestore database operations.
+### GlobalChatView
+
+The `GlobalChatView` SwiftUI component is designed for a chat interface that supports sending messages, uploading images, and selecting emojis. It integrates Firebase for authentication and messaging, and utilizes various environment objects for managing app state and user data. 
+
+#### Dependencies
+- **SwiftUI**: Provides the framework for building user interfaces.
+- **BottomSheet**: Enables bottom sheet functionality for showing emojis.
+- **SDWebImageSwiftUI**: Handles asynchronous image loading and caching.
+- **Firebase**: Backend service for user authentication and real-time messaging.
+
+#### State Management
+- **@EnvironmentObject**:
+  - `msgData`: Manages chat messages and state.
+  - `loginVM`: Handles user authentication and session management.
+  - `userInfoVM`: Manages user information from Firebase.
+  - `settings`: Manages app settings such as theme and colors.
+  - `envManager`: Manages environment-specific settings.
+  - `missionVM`: Handles mission-related tasks and rewards.
+  - `notification`: Manages notifications to other devices.
+  - `url_params`: Manages selected URL for emojis.
+
+- **@AppStorage**:
+  - `background_theme`, `text_color`, `text_style`: Persist app settings like background theme and font styles.
+
+- **@State**:
+  - `showAlert`, `scrolled`, `showLogOutOptions`, `showImagePicker`, `image`, `emoji_url`, `showLogInAlert`, `isNotLoggedIN`, `message`, `showOptional`, `imagePreview`, `showingOverlay`, `isPlaying`: Local state variables for managing UI state and user interaction.
+
+- **@FocusState**:
+  - `isFocused`, `focus`: Manages focus state for text fields (`CustomTextField`).
+
+#### Views and Components
+- **Main Layout**:
+  - Uses `GeometryReader` to dynamically adjust layout based on screen size.
+  - Embeds components in a `VStack` for vertical stacking.
+
+- **Chat Section**:
+  - Displays chat messages in a `ScrollView` with `ScrollViewReader` for message scrolling.
+  - Messages are dynamically updated using `onChange` and `task`.
+
+- **Image and Emoji Preview**:
+  - Displays selected images and emojis as overlays using `overlay`.
+
+- **Bottom Section**:
+  - Contains buttons for adding images (`showImagePicker`) and emojis (`showingOverlay`).
+  - Uses `CustomTextField` for message input.
+
+- **Top Section**:
+  - Custom toolbar (`toolbar`) with back button, chat title, and user avatar.
+  - Utilizes `fullScreenCover` for image picker and `sheet` for sign-in view.
+
+#### Interaction and Logic
+- **Authentication and State Management**:
+  - Handles authentication status and user data using Firebase.
+  - Manages app settings and theme changes dynamically.
+
+- **Messaging and Notifications**:
+  - Allows users to send messages with optional images and emojis.
+  - Sends notifications to other devices using Firebase Cloud Messaging.
+
+#### Previews and Utility Components
+- **MessagePlaceholder**: Placeholder view for message input.
+- **CustomTextField**: Customized text field component with support for emojis.
+
+#### Extensions and Utilities
+- **UIApplication Extension**:
+  - Utility method (`hideKeyboard`) to dismiss the keyboard.
+
+
+
+### EmojiListView
+
+The `EmojiListView` SwiftUI component is designed to display and select emojis for use in a chat interface. It provides a horizontal scroll view for emoji categories and a grid view for displaying individual emojis within a selected category. The component supports dynamic loading of emoji images using SDWebImageSwiftUI for improved performance.
+
+#### Dependencies
+- **SwiftUI**: Provides the framework for building user interfaces.
+- **SDWebImageSwiftUI**: Handles asynchronous image loading and caching for smooth emoji display.
+- **UIApplication Extension**: Provides utility to retrieve the current active UI window.
+
+#### State Management
+- **@Binding**:
+  - `showing`: Manages the visibility of the emoji list view.
+  - `play`: Controls the animation state of emojis.
+  
+- **@EnvironmentObject**:
+  - `url_params`: Manages URL lists for emojis.
+  - `settings`: Manages app settings and emoji ownership.
+
+- **@ObservedObject**:
+  - `imageManager`: Manages the loading and cancelation of emoji images.
+
+- **@State**:
+  - `owned`: Tracks whether the user owns a specific emoji category.
+  - `item`: Tracks the currently selected emoji category.
+  - `link`: Stores the URL link of selected emojis.
+
+#### Views and Components
+- **Emoji Type Preview**:
+  - Horizontal `ScrollView` showing preview images of emoji categories.
+  - Each category image is loaded dynamically from a predefined list of URLs.
+
+- **Emoji List Preview**:
+  - Vertical `ScrollView` displaying individual emojis in a grid layout (`LazyVGrid`).
+  - Emojis are loaded dynamically based on the selected category (`selected_url_list`).
+
+#### Interaction and Logic
+- **Emoji Selection**:
+  - Tapping an emoji category updates the displayed emoji list (`selected_url_list`).
+  - Emojis are displayed in a grid and can be selected for use in the chat interface.
+
+- **Emoji Ownership**:
+  - Lock icon overlay indicates emojis that the user does not own (`!settings.ownedEmojis.contains(...)`).
+
+#### Utility and Extensions
+- **UIApplication Extension**:
+  - `currentUIWindow()`: Retrieves the current active UI window, useful for handling UI interactions or transitions.
+

@@ -1532,18 +1532,15 @@
 </ul>
 <h4 id="usage_1">Usage</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="p">@</span><span class="n">StateObject</span> <span class="kd">var</span> <span class="nv">msgMenuModel</span> <span class="p">=</span> <span class="n">MsgMenuModel</span><span class="p">()</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="p">@</span><span class="n">EnvironmentObject</span> <span class="kd">var</span> <span class="nv">msgMenuModel</span> <span class="p">=</span> <span class="n">MsgMenuModel</span><span class="p">()</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="n">List</span><span class="p">(</span><span class="n">msgMenuModel</span><span class="p">.</span><span class="n">msgs</span><span class="p">)</span> <span class="p">{</span> <span class="n">msg</span> <span class="k">in</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            <span class="n">ChatRow</span><span class="p">(</span><span class="n">chatData</span><span class="p">:</span> <span class="n">msg</span><span class="p">)</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                <span class="p">.</span><span class="n">environmentObject</span><span class="p">(</span><span class="n">AccountServiceViewModel</span><span class="p">())</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>                <span class="p">.</span><span class="n">environmentObject</span><span class="p">(</span><span class="n">SettingBindingValues</span><span class="p">())</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>                <span class="p">.</span><span class="n">environmentObject</span><span class="p">(</span><span class="n">MsgMenuModel</span><span class="p">())</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                <span class="p">.</span><span class="n">environmentObject</span><span class="p">(</span><span class="n">FirebaseUserInfoViewModel</span><span class="p">())</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="p">}</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="p">}</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">}</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                <span class="p">.</span><span class="n">environmentObject</span><span class="p">(</span><span class="n">MsgMenuModel</span><span class="p">())</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="p">}</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="p">}</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
 <li>Ensure <code>AccountServiceViewModel</code>, <code>SettingBindingValues</code>, <code>MsgMenuModel</code>, and <code>FirebaseUserInfoViewModel</code> are properly initialized and accessible as <code>EnvironmentObjects</code>.</li>
