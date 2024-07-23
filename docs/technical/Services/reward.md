@@ -261,8 +261,6 @@ There are a total of 30 levels. When a user levels up, the following function up
 
 Below function calling related level reward function.
 
-Certainly! Here's an improved version:
-
 ```swift
 // This function calls the corresponding reward function based on the user's level.
 func getLevelReward(level: Int) {
