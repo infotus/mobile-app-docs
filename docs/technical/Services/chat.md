@@ -115,15 +115,12 @@ The `ChatRow` struct represents a SwiftUI view used for displaying chat messages
 
 ```swift
 struct ContentView: View {
-    @StateObject var msgMenuModel = MsgMenuModel()
+    @EnvironmentObject var msgMenuModel = MsgMenuModel()
 
     var body: some View {
         List(msgMenuModel.msgs) { msg in
             ChatRow(chatData: msg)
-                .environmentObject(AccountServiceViewModel())
-                .environmentObject(SettingBindingValues())
                 .environmentObject(MsgMenuModel())
-                .environmentObject(FirebaseUserInfoViewModel())
         }
     }
 }
