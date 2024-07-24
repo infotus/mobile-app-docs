@@ -38,9 +38,9 @@ theme:
         - Messaging: technical/firebase/messaging.md
         - Firestore: technical/firebase/firestore.md
       - AWS: technical/aws/1awsintro.md
-      - Daily Login Tracking: technical/Services/daily/reward.md
-      - Global Chat: technical/Services/chat/chat.md
-      - In App Purchase: technical/Services/IAP/iap.md
+      - Daily Login Tracking: technical/services/daily/reward.md
+      - Global Chat: technical/services/chat/chat.md
+      - In App Purchase: technical/services/IAP/iap.md
     
     - Databases: technical/databases.md
     - API Documentation: technical/api.md
@@ -99,3 +99,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
