@@ -22,14 +22,14 @@ The MySQL database is hosted on AWS and is primarily used for managing web conte
 Only these two tables are created specifically for the application. Additionally, data from the following tables are utilized for various features:
 
 - **Users**
-- **Liver**
-- **Channel**
+- **Livers**
+- **Channels**
 
 For further details, please refer to the web content documentation.
 
 ### Modules
 
-
+![AWSModule](../img/modules/awsmodules.png)
 
 ### Tables
 
