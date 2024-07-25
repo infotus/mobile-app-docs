@@ -8,10 +8,6 @@ weight: 0
 
 This application utilizes two hosting database platforms:
 
-Certainly! Here's the updated AWS Database section with the additional information:
-
----
-
 ## AWS Database
 
 The MySQL database is hosted on AWS and is primarily used for managing web content. The database includes the following tables:
