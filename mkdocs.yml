@@ -45,7 +45,9 @@ theme:
     - Databases: 
       - technical/databases/databases.md
       - MsgModel: technical/databases/models/msgmodel.md
-
+      - UserInfoModel: technical/databases/models/userinfomodel.md
+      - ReportsModel:  technical/databases/models/reportsmodel.md
+      - NotificationModel:  technical/databases/models/accessmodel.md
 
     - API Documentation: technical/api.md
     - Functions: technical/func.md

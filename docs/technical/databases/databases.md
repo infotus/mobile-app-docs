@@ -1,5 +1,5 @@
 ---
-title: Intro
+title: Introduction
 weight: 0
 ---
 
@@ -33,7 +33,7 @@ For further details, please refer to the web content documentation.
 
 #### users
 - **id**: INTEGER (Primary Key)
-- **nick_name**: VARCHAR(255)
+- **nick_name**: VARCHAR
 - **current_point**: DECIMAL -> Description: Cheer Coins Value
 
 Description: Stores user informations. The `users` table contains additional data values not directly related to the application. For more detailed information, please refer to the official website documentation.
@@ -73,9 +73,9 @@ Description: The `channels` table contains additional data values not directly r
 #### in_app_purchase
 - **id**: INTEGER (Primary Key)
 - **user_id**: INTEGER -> Foreign Key Reference: `users.id`
-- **transaction_id**: VARCHAR(255)
-- **transaction_type**: VARCHAR(255)
-- **platform**: VARCHAR(255) -> Default: IOS
+- **transaction_id**: VARCHAR
+- **transaction_type**: VARCHAR
+- **platform**: VARCHAR -> Default: IOS
 - **app_cheer**: INTEGER -> Description: Purchased Cheer Coin Value
 - **used_flag**: INTEGER -> Description: Confirmation value for value is updated database
 - **created_at**: TIMESTAMP
@@ -92,8 +92,8 @@ Below is a snapshot of the `in app purchase` table:
 - **id**: INTEGER (Primary Key)
 - **user_id**: INTEGER -> Foreign Key Reference: `users.id`
 - **price**: INTEGER
-- **item_id**: VARCHAR(255)
-- **platform**: VARCHAR(255)
+- **item_id**: VARCHAR
+- **platform**: VARCHAR
 - **quantity**: INTEGER
 - **created_at**: TIMESTAMP
 - **updated_at**: TIMESTAMP
