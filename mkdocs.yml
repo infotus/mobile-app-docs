@@ -42,7 +42,11 @@ theme:
       - Global Chat: technical/services/chat/chat.md
       - In App Purchase: technical/services/IAP/iap.md
     
-    - Databases: technical/databases.md
+    - Databases: 
+      - technical/databases/databases.md
+      - MsgModel: technical/databases/models/msgmodel.md
+
+
     - API Documentation: technical/api.md
     - Functions: technical/func.md
     - Other: technical/other.md
