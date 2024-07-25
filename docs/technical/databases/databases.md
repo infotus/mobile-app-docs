@@ -87,6 +87,9 @@ Description: The `channels` table contains additional data values not directly r
 - **deleted_at**: TIMESTAMP
 
 Description: Records in-app purchases made by users, including transaction details and timestamps.
+
+Below is a snapshot of the `in app purchase` table:
+
 ![CheerPurchase](../../img/modules/cheer%20purchase.png)
 
 #### in_app_item_purchase
@@ -101,6 +104,9 @@ Description: Records in-app purchases made by users, including transaction detai
 - **deleted_at**: TIMESTAMP
 
 Description: Logs purchases of in-app items, including price, item details, and timestamps.
+
+Below is a snapshot of the `in app item purchase` table:
+
 ![itempurchase](../../img/modules/item%20purchase.png)
 
 #### References:
