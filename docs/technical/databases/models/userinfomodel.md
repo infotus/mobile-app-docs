@@ -5,18 +5,18 @@ weight: 2
 
 # User Info Model
 
-## Overview
-
 The script defines data models for managing user information in a Swift application, specifically one that integrates with Firebase for data storage and retrieval. It includes models for user information, constants for Firebase collections and parameters, and structures for user and level data.
 
-#### **Libraries**
+**UserInfoModel.swift**
+
+### **Libraries**
 
 - `Foundation`: Provides fundamental classes and services for Swift applications.
 - `SwiftUI`: Framework for building user interfaces.
 - `Firebase`: Firebase SDK for integrating Firebase services.
 - `FirebaseFirestoreSwift`: Firebase Firestore Swift extensions for easier handling of Firestore data.
 
-#### **UserInfoModel Structure**
+### **UserInfoModel Structure**
 
 ```swift
 struct UserInfoModel: Codable, Identifiable, Hashable {
@@ -54,22 +54,22 @@ struct UserInfoModel: Codable, Identifiable, Hashable {
 ```
 
 - **Attributes:**
-  - `id`: Firebase document ID (optional).
-  - `userID`: A unique identifier for the user within the database.
-  - `shopPoint`: The number of shop points the user has earned.
-  - `totalExp`: Total experience points earned by the user.
-  - `consecutiveLogin`: Number of consecutive login days.
-  - `totalLogin`: Total number of login days.
-  - `ownedAllItems`: List of item names owned by the user.
-  - `lastLogin`: The date of the last login.
-  - `expBoosterEndDay`: The date when the experience booster ends.
-  - `dailyReward`: Indicates whether the user has received daily rewards.
-  - `missionRewards`: Status of rewards received for missions.
-  - `blockedUsers`: List of UUIDs of users blocked by this user.
-  - `hiddenMsgs`: List of messages that are hidden.
-  - `fcmToken`: Firebase Cloud Messaging token for notifications.
+    - `id`: Firebase document ID (optional).
+    - `userID`: A unique identifier for the user within the database.
+    - `shopPoint`: The number of shop points the user has earned.
+    - `totalExp`: Total experience points earned by the user.
+    - `consecutiveLogin`: Number of consecutive login days.
+    - `totalLogin`: Total number of login days.
+    - `ownedAllItems`: List of item names owned by the user.
+    - `lastLogin`: The date of the last login.
+    - `expBoosterEndDay`: The date when the experience booster ends.
+    - `dailyReward`: Indicates whether the user has received daily rewards.
+    - `missionRewards`: Status of rewards received for missions.
+    - `blockedUsers`: List of UUIDs of users blocked by this user.
+    - `hiddenMsgs`: List of messages that are hidden.
+    - `fcmToken`: Firebase Cloud Messaging token for notifications.
 
-#### **FirebaseCollectionConstants**
+### **FirebaseCollectionConstants**
 
 ```swift
 struct FirebaseCollectionConstants {
@@ -85,7 +85,7 @@ struct FirebaseCollectionConstants {
 
 - **Purpose**: Holds constant values for Firebase collection names to avoid hardcoding strings throughout the codebase.
 
-#### **UserInfoConstants**
+### **UserInfoConstants**
 
 ```swift
 struct UserInfoConstants {
@@ -108,7 +108,7 @@ struct UserInfoConstants {
 
 - **Purpose**: Defines constants for database field names to maintain consistency and reduce errors.
 
-#### **UserDatas**
+### **UserDatas**
 
 ```swift
 struct UserDatas: Codable {
@@ -148,7 +148,7 @@ struct UserDatas: Codable {
 
 - **Purpose**: Represents user data with an initializer for creating instances.
 
-#### **LevelConstants**
+### **LevelConstants**
 
 ```swift
 struct LevelConstants {
@@ -159,7 +159,7 @@ struct LevelConstants {
 
 - **Purpose**: Contains constant field names for level data in the database.
 
-#### **LevelDatas**
+### **LevelDatas**
 
 ```swift
 struct LevelDatas {
@@ -180,3 +180,5 @@ struct LevelDatas {
 This script provides a structured way to handle user information and level data in a Swift application using Firebase. It defines models for user data, constants for Firebase collections and field names, and structures for user and level data. This approach ensures consistency, reduces errors, and simplifies the management of Firebase data. -->
 
 ---
+
+
