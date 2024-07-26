@@ -44,17 +44,17 @@ struct MsgModel: Codable, Identifiable, Hashable {
 }
 ```
 
-- **Description**: Represents a message model conforming to Codable, Identifiable, and Hashable protocols for use with Firebase Firestore.
+**Description**: Represents a message model conforming to Codable, Identifiable, and Hashable protocols for use with Firebase Firestore.
   
-- **Properties**:
-  - `id`: Optional String (`@DocumentID` property wrapper) - Unique identifier for the message document in Firestore.
-  - `userID`: Optional String - User ID associated with the message.
-  - `msg`: Optional String - Message content.
-  - `name`: Optional String - Nickname associated with the user.
-  - `timeStamp`: Date - Timestamp indicating when the message was created.
-  - `urlPath`: Optional String - URL link to the user's avatar.
-  - `imagePath`: Optional String - Path to an image associated with the message.
-  - `uuid`: Optional String - Universally unique identifier for the message.
+**Properties**:
+- `id`: Optional String (`@DocumentID` property wrapper) - Unique identifier for the message document in Firestore.
+- `userID`: Optional String - User ID associated with the message.
+- `msg`: Optional String - Message content.
+- `name`: Optional String - Nickname associated with the user.
+- `timeStamp`: Date - Timestamp indicating when the message was created.
+- `urlPath`: Optional String - URL link to the user's avatar.
+- `imagePath`: Optional String - Path to an image associated with the message.
+- `uuid`: Optional String - Universally unique identifier for the message.
 
 - **CodingKeys Enum**: Specifies the mapping between the Swift property names and the corresponding Firestore document field names.
 

@@ -53,7 +53,7 @@ struct UserInfoModel: Codable, Identifiable, Hashable {
 }
 ```
 
-- **Attributes:**
+**Attributes:**
     - `id`: Firebase document ID (optional).
     - `userID`: A unique identifier for the user within the database.
     - `shopPoint`: The number of shop points the user has earned.
@@ -83,7 +83,7 @@ struct FirebaseCollectionConstants {
 }
 ```
 
-- **Purpose**: Holds constant values for Firebase collection names to avoid hardcoding strings throughout the codebase.
+**Purpose**: Holds constant values for Firebase collection names to avoid hardcoding strings throughout the codebase.
 
 ### **UserInfoConstants**
 
@@ -106,7 +106,7 @@ struct UserInfoConstants {
 }
 ```
 
-- **Purpose**: Defines constants for database field names to maintain consistency and reduce errors.
+**Purpose**: Defines constants for database field names to maintain consistency and reduce errors.
 
 ### **UserDatas**
 
@@ -146,7 +146,7 @@ struct UserDatas: Codable {
 }
 ```
 
-- **Purpose**: Represents user data with an initializer for creating instances.
+**Purpose**: Represents user data with an initializer for creating instances.
 
 ### **LevelConstants**
 
@@ -157,7 +157,7 @@ struct LevelConstants {
 }
 ```
 
-- **Purpose**: Contains constant field names for level data in the database.
+**Purpose**: Contains constant field names for level data in the database.
 
 ### **LevelDatas**
 
@@ -173,7 +173,7 @@ struct LevelDatas {
 }
 ```
 
-- **Purpose**: Represents level data with an initializer for creating instances.
+**Purpose**: Represents level data with an initializer for creating instances.
 
 <!-- ## Summary
 

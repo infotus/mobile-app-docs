@@ -37,13 +37,13 @@ struct ReportsModel: Codable, Identifiable, Hashable {
 }
 ```
 
-- **Attributes:**
-    - `id`: The unique identifier for the Firestore document (optional and automatically assigned).
-    - `userUID`: A unique identifier for the user who submitted the report.
-    - `date`: The date when the report was created.
-    - `reason`: A description of why the report was made.
-    - `reportedUserUID`: The unique identifier of the user who is being reported.
-    - `msg_id`: The identifier of the message related to the report.
+**Attributes:**
+- `id`: The unique identifier for the Firestore document (optional and automatically assigned).
+- `userUID`: A unique identifier for the user who submitted the report.
+- `date`: The date when the report was created.
+- `reason`: A description of why the report was made.
+- `reportedUserUID`: The unique identifier of the user who is being reported.
+- `msg_id`: The identifier of the message related to the report.
 
 - **CodingKeys Enum**: Maps Swift property names to Firestore field names to facilitate encoding and decoding.
 
@@ -59,7 +59,7 @@ struct ReasonsConstant {
 }
 ```
 
-- **Purpose**: Defines constants for Firestore field names to avoid hardcoding and to maintain consistency across the application.
+**Purpose**: Defines constants for Firestore field names to avoid hardcoding and to maintain consistency across the application.
 
 ### **ReasonDatas**
 
@@ -81,7 +81,7 @@ struct ReasonDatas {
 }
 ```
 
-- **Purpose**: Represents the details of a report with an initializer for creating instances. This structure is used for managing report data in a type-safe manner.
+**Purpose**: Represents the details of a report with an initializer for creating instances. This structure is used for managing report data in a type-safe manner.
 
 ### **Report Reasons**
 
