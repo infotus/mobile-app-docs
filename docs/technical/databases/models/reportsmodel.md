@@ -38,6 +38,7 @@ struct ReportsModel: Codable, Identifiable, Hashable {
 ```
 
 **Attributes:**
+
 - `id`: The unique identifier for the Firestore document (optional and automatically assigned).
 - `userUID`: A unique identifier for the user who submitted the report.
 - `date`: The date when the report was created.

@@ -47,6 +47,7 @@ struct MsgModel: Codable, Identifiable, Hashable {
 **Description**: Represents a message model conforming to Codable, Identifiable, and Hashable protocols for use with Firebase Firestore.
   
 **Properties**:
+
 - `id`: Optional String (`@DocumentID` property wrapper) - Unique identifier for the message document in Firestore.
 - `userID`: Optional String - User ID associated with the message.
 - `msg`: Optional String - Message content.
@@ -59,6 +60,7 @@ struct MsgModel: Codable, Identifiable, Hashable {
 - **CodingKeys Enum**: Specifies the mapping between the Swift property names and the corresponding Firestore document field names.
 
 ### Notes
+
 - **Firestore Integration**: This model is designed to integrate with Firestore, allowing seamless conversion between Firestore documents and Swift objects using Codable protocols.
 - **Firebase FirestoreSwift**: Utilizes the `@DocumentID` property wrapper from `FirebaseFirestoreSwift` to manage document IDs directly within the Swift struct.
 - **SwiftUI Compatibility**: The script imports SwiftUI, indicating potential integration with SwiftUI views or components, though not directly evident from the provided script.

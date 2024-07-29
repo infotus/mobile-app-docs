@@ -212,10 +212,7 @@ struct ServiceAccountModel: Codable, Identifiable, Hashable {
 - `client_cert_url`: The URL for the client certificate.
 - `universe_domain`: The universe domain associated with the service account.
 
-
-
-- **CodingKeys Enum**: Maps Swift property names to Firestore field names to facilitate encoding and decoding.
-
+**CodingKeys Enum**: Maps Swift property names to Firestore field names to facilitate encoding and decoding.
 
 The script provides a structured approach to managing Google API access tokens and service account details within a Swift application. It includes:
 

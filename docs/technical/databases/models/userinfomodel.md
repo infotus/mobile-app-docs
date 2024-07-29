@@ -54,20 +54,21 @@ struct UserInfoModel: Codable, Identifiable, Hashable {
 ```
 
 **Attributes:**
-    - `id`: Firebase document ID (optional).
-    - `userID`: A unique identifier for the user within the database.
-    - `shopPoint`: The number of shop points the user has earned.
-    - `totalExp`: Total experience points earned by the user.
-    - `consecutiveLogin`: Number of consecutive login days.
-    - `totalLogin`: Total number of login days.
-    - `ownedAllItems`: List of item names owned by the user.
-    - `lastLogin`: The date of the last login.
-    - `expBoosterEndDay`: The date when the experience booster ends.
-    - `dailyReward`: Indicates whether the user has received daily rewards.
-    - `missionRewards`: Status of rewards received for missions.
-    - `blockedUsers`: List of UUIDs of users blocked by this user.
-    - `hiddenMsgs`: List of messages that are hidden.
-    - `fcmToken`: Firebase Cloud Messaging token for notifications.
+
+- `id`: Firebase document ID (optional).
+- `userID`: A unique identifier for the user within the database.
+- `shopPoint`: The number of shop points the user has earned.
+- `totalExp`: Total experience points earned by the user.
+- `consecutiveLogin`: Number of consecutive login days.
+- `totalLogin`: Total number of login days.
+- `ownedAllItems`: List of item names owned by the user.
+- `lastLogin`: The date of the last login.
+- `expBoosterEndDay`: The date when the experience booster ends.
+- `dailyReward`: Indicates whether the user has received daily rewards.
+- `missionRewards`: Status of rewards received for missions.
+- `blockedUsers`: List of UUIDs of users blocked by this user.
+- `hiddenMsgs`: List of messages that are hidden.
+- `fcmToken`: Firebase Cloud Messaging token for notifications.
 
 ### **FirebaseCollectionConstants**
 
