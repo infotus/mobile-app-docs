@@ -1,12 +1,11 @@
 ---
-title: API's
-weight: 4
+title: Request
+weight: 1
 ---
-# API's Documentation
 
-## AWS API's 
+## API's 
 
-`APIService` provides a set of functions to interact with the Cheer Supports API, handling various routes related to user data, login, points, purchases, and more. Each function is asynchronous, using Swift's concurrency features for network operations.
+`APIService` provides a set of functions to interact with the Cheer Supports API, handling various routes related to user data, login, points, purchases, and more. Each function is asynchronous, using Swift's concurrency features for network operations. There are addinotial APIs beside in APIService class.
 
 ### API Endpoints
 
@@ -16,7 +15,7 @@ weight: 4
 - **Method:** `GET`
 - **URL:** `https://api.cheer-supports.com/api/v1/user/items?type=9`
 - **Parameters:** 
-  - `token` (String) - Bearer token for authentication
+    - `token` (String) - Bearer token for authentication
 
 ##### Request
 
@@ -41,7 +40,7 @@ func getUserAvatar(token: String) async throws -> String
 - **Method:** `GET`
 - **URL:** `https://api.cheer-supports.com/api/v1/user/channel/mine`
 - **Parameters:**
-  - `token` (String) - Bearer token for authentication
+    - `token` (String) - Bearer token for authentication
 
 ##### Request
 
@@ -66,8 +65,8 @@ func getUserProfile(token: String) async throws -> [Route129Response]
 - **Method:** `POST`
 - **URL:** `https://api.cheer-supports.com/api/v1/liver/login`
 - **Parameters:**
-  - `email` (String)
-  - `password` (String)
+    - `email` (String)
+    - `password` (String)
 
 ##### Request
 
@@ -91,8 +90,8 @@ func getLoginDatas(email: String, password: String, completion: @escaping (Resul
 - **Method:** `GET`
 - **URL:** `https://api.cheer-supports.com/api/v1/user/point?id={user_id}`
 - **Parameters:**
-  - `user_id` (String)
-  - `token` (String)
+    - `user_id` (String)
+    - `token` (String)
 
 ##### Request
 
@@ -117,8 +116,8 @@ func checkCurrentPoint(user_id: String, token: String) async throws -> String
 - **Method:** `POST`
 - **URL:** `https://api.cheer-supports.com/api/v1/app/purchase/key/decrypt?encodedkey={encoded_key}`
 - **Parameters:**
-  - `encoded_key` (String)
-  - `token` (String)
+    - `encoded_key` (String)
+    - `token` (String)
 
 ##### Request
 
@@ -142,12 +141,12 @@ func sendEncodedData(encoded_key: String, token: String, completion: @escaping (
 - **Method:** `POST`
 - **URL:** `https://api.cheer-supports.com/api/v1/app/cheer/deduct`
 - **Parameters:**
-  - `user_id` (String)
-  - `quantity` (Int)
-  - `price` (Int)
-  - `platform` (String)
-  - `item_id` (String)
-  - `token` (String)
+    - `user_id` (String)
+    - `quantity` (Int)
+    - `price` (Int)
+    - `platform` (String)
+    - `item_id` (String)
+    - `token` (String)
 
 ##### Request
 
@@ -172,8 +171,8 @@ func sendCheerDeductionInformations(user_id: String, token: String, quantity: In
 - **Method:** `POST`
 - **URL:** `https://api.cheer-supports.com/api/v1/contact`
 - **Parameters:**
-  - `user_id` (String)
-  - `token` (String)
+    - `user_id` (String)
+    - `token` (String)
 
 ##### Request
 
@@ -196,8 +195,8 @@ func deleteAccountRequest(user_id: String, token: String)
 - **Method:** `GET`
 - **URL:** `https://api.cheer-supports.com/api/v1/liver/follow?user_id={user_id}`
 - **Parameters:**
-  - `user_id` (String)
-  - `token` (String)
+    - `user_id` (String)
+    - `token` (String)
 
 ##### Request
 
@@ -222,8 +221,8 @@ func getFollowListCount(user_id: String, token: String) async throws -> Route196
 - **Method:** `GET`
 - **URL:** `https://api.cheer-supports.com/api/v1/channel/streaming/date/{user_id}`
 - **Parameters:**
-  - `user_id` (String)
-  - `token` (String)
+    - `user_id` (String)
+    - `token` (String)
 
 ##### Request
 
@@ -248,8 +247,8 @@ func getLastStreaming(user_id: String, token: String) async throws -> Route603Re
 - **Method:** `GET`
 - **URL:** `https://api.cheer-supports.com/api/v1/channel/watch/streaming/{user_id}`
 - **Parameters:**
-  - `user_id` (String)
-  - `token` (String)
+    - `user_id` (String)
+    - `token` (String)
 
 ##### Request
 
@@ -274,8 +273,8 @@ func getWatchedStreams(user_id: String, token: String) async throws -> [Route604
 - **Method:** `GET`
 - **URL:** `https://api.cheer-supports.com/api/v1/yell/info/get/{user_id}`
 - **Parameters:**
-  - `user_id` (String)
-  - `token` (String)
+    - `user_id` (String)
+    - `token` (String)
 
 ##### Request
 
@@ -294,23 +293,170 @@ func getLastGiftSend(user_id: String, token: String) async throws -> Route605Res
 - `500..600`: Server errors
 - `PathError.custom`: Custom error message for server issues
 
----
 
-### Error Types
+###  .sendMessageToDevice()
 
-#### PathError
+This function in `FirebaseUserInfoViewModel` observable script.
+The `sendMessageToDevice` function is designed to send push notifications to all devices subscribed to the "ios_platform" topic using Firebase Cloud Messaging (FCM). It constructs and sends a notification payload to FCM's messaging endpoint. 
+
+##### Function Signature
+
+```swift
+func sendMessageToDevice(msg: String, title: String) async throws
+```
+
+##### Parameters
+
+- **`msg`** (`String`): The message body of the notification.
+- **`title`** (`String`): The title of the notification.
+
+##### Endpoint
+
+- **URL**: `https://fcm.googleapis.com/v1/projects/cheer-supports-iphone/messages:send`
+- **Method**: `POST`
+
+##### Request Headers
+
+- **Content-Type**: `application/json`
+- **Authorization**: `Bearer <accessToken>`
+
+##### Request Body
+
+The request body is a JSON object with the following structure:
+
+```json
+{
+  "message": {
+    "topic": "ios_platform",
+    "notification": {
+      "body": "<msg>",
+      "title": "<title>"
+    },
+    "apns": {
+      "headers": {
+        "apns-priority": "10"
+      },
+      "payload": {
+        "aps": {
+          "alert": {
+            "title": "<title>",
+            "loc-key": "<msg>"
+          },
+          "sound": "default"
+        }
+      }
+    }
+  }
+}
+```
+
+
+1. **Access Token Retrieval**: The function retrieves an access token using `self.getAccessToken()`. This token is used to authorize the request to FCM.
+2. **JSON Payload Construction**: Constructs a JSON payload with the message and notification details.
+3. **HTTP Request Setup**: Configures the HTTP request with the necessary headers and body.
+4. **Sending Request**: Sends the notification via `URLSession.shared.dataTask`.
+
+##### Error Handling
+
+- **Network Errors**: Any network or request errors are logged to the console.
+- **Response Handling**: Logs the response if available. The code snippet that handles response status codes is commented out but can be used for further error handling.
+
+
+For more details about FCM and its notification payload structure, refer to the [Firebase Cloud Messaging Documentation](https://firebase.google.com/docs/cloud-messaging).
+
+
+### ServiceAccountTokenProvider
+
+The `ServiceAccountTokenProvider` class is used to manage and provide OAuth 2.0 tokens for service accounts. It constructs and sends a JWT (JSON Web Token) to the OAuth 2.0 token endpoint to obtain an access token. This class relies on service account credentials and RSA private keys for authentication.
+
+#### Class: `ServiceAccountTokenProvider`
+
+##### Properties
+
+- **`token`** (`Token?`): Optional property to hold the token object once it's retrieved.
+- **`credentials`** (`ServiceAccountCredentials`): Holds the service account credentials.
+- **`scopes`** (`[String]`): The scopes required for the token.
+- **`rsaKey`** (`RSAKey`): RSA key used to sign the JWT.
+
+##### Initializers
+
+1. **`init?(credentialsData: Data, scopes: [String])`**
+
+   Initializes the provider with service account credentials and required scopes.
+
+   - **Parameters:**
+     - `credentialsData`: Data containing the service account credentials in JSON format.
+     - `scopes`: Array of strings representing the scopes required for the token.
+   - **Returns:**
+     - An optional `ServiceAccountTokenProvider` instance.
+
+2. **`init?(credentialsURL: URL, scopes: [String])`**
+
+   Initializes the provider with service account credentials loaded from a URL and required scopes.
+
+   - **Parameters:**
+     - `credentialsURL`: URL pointing to a JSON file containing the service account credentials.
+     - `scopes`: Array of strings representing the scopes required for the token.
+   - **Returns:**
+     - An optional `ServiceAccountTokenProvider` instance.
+
+##### Methods
+
+**`withToken(_ callback: @escaping (Token?, Error?) -> Void) throws`**
+
+   Requests a new OAuth 2.0 token by sending a JWT to the token endpoint.
+
+   - **Parameters:**
+
+        - `callback`: A closure that is called with the resulting token or an error.
+   - **Throws:**
+
+        - Errors may be thrown during JWT encoding or HTTP request execution.
+   - **Returns:**
+
+        - This method does not return a value directly. Instead, the result is passed to the callback.
+
+#### Internal Structures
+
+##### `ServiceAccountCredentials`
+
+Represents the service account credentials required for authentication.
+
+- **Properties:**
+
+    - `CredentialType`: Type of credential (e.g., "service_account").
+    - `ProjectId`: Google Cloud project ID.
+    - `PrivateKeyId`: ID of the private key.
+    - `PrivateKey`: The private key used to sign the JWT.
+    - `ClientEmail`: Email associated with the service account.
+    - `ClientID`: Client ID for the service account.
+    - `AuthURI`: URI for authentication.
+    - `TokenURI`: URI for token exchange.
+    - `AuthProviderX509CertURL`: URL for the authentication provider's X.509 certificate.
+    - `ClientX509CertURL`: URL for the client's X.509 certificate.
+
+- **Coding Keys:**
+  - Mapped to JSON fields in the service account credentials JSON.
+
+
+For further details about JWT, OAuth 2.0, and service account credentials, refer to the [Google Cloud documentation](https://cloud.google.com/docs/authentication/getting-started) and [JWT specifications](https://jwt.io/introduction/).
+
+
+#### Error Types
+
+##### PathError
 
 - `custom(errorMessage: String)`: Custom error with a message
 - `noData`: No data received from the server
 - `invalidUrl`: Invalid URL or endpoint
 - `decodingError`: Error decoding the response
 
-#### AuthenticationError
+##### AuthenticationError
 
 - `custom(errorMessage: String)`: Custom authentication error
 - `invalidCredentials`: Invalid credentials provided
 
-#### PurchaseError
+##### PurchaseError
 
 - `invalidUrl`: Invalid URL for purchase decryption
 - `invalidKey`: Invalid key provided

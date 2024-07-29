@@ -3,7 +3,7 @@ plugins:
   - search
   - open-in-new-tab
   - mkdocs-nav-weight:
-      section_renamed: false
+      section_renamed: true
 
 
 
@@ -49,7 +49,12 @@ theme:
       - ReportsModel:  technical/databases/models/reportsmodel.md
       - NotificationModel:  technical/databases/models/accessmodel.md
 
-    - API Documentation: technical/api.md
+    - API Documentation: 
+      - technical/api/api.md
+      - Request: technical/api/request.md
+      - Response: technical/api/response.md
+
+
     - Functions: technical/func.md
     - Other: technical/other.md
 
