@@ -57,10 +57,9 @@ theme:
 
     - Functions: 
       - technical/functions/func.md
+      - technical/functions/resource.md
       - ViewModel: 
         - technical/functions/viewmodels/func1.md
-      - Resource:
-        - technical/functions/resources/resource1.md
 
     - Other: technical/other.md
 
