@@ -112,10 +112,6 @@ A SwiftUI view that includes two buttons (for increment and decrement) and a `Te
 - **TextField**: Ensures the displayed value does not exceed 99 upon user input.
 
 
-### Parameters
-- **`unitValue`**: A `State` variable that holds the integer value shared with the `MinusPlusButton` view.
-
-
 
 ## `CustomButtonStyle`
 
@@ -123,17 +119,14 @@ The `CustomButtonStyle` is a SwiftUI `ButtonStyle` that allows for the customiza
 
 A struct conforming to `ButtonStyle`, which customizes the appearance and animation of a button.
 
-#### Properties
+### Properties
 
 - **`color`**: A `Color` that defines the background color of the button.
 - **`width`**: A `CGFloat` that specifies the width of the button.
 - **`height`**: A `CGFloat` that specifies the height of the button.
 
-#### Methods
 
-- **`makeBody(configuration:)`**: Creates and returns the view representing the button's appearance.
-
-#### Definition
+### Definition
 
 ```swift
 struct CustomButtonStyle: ButtonStyle {
@@ -156,11 +149,11 @@ struct CustomButtonStyle: ButtonStyle {
 }
 ```
 
-#### `makeBody(configuration:)` Method
-
+### Method
+- **`makeBody(configuration:)`**: A required method for conforming to the ButtonStyle protocol in SwiftUI. It creates and returns a view that represents the style of a button, based on the current configuration.
 - **`configuration`**: Provides context for the button’s current state, including whether it is pressed.
 
-##### View Modifiers Applied
+#### View Modifiers Applied
 
 - **`padding(5)`**: Adds padding around the button content.
 - **`frame(width:height:)`**: Sets the button's width and height.
@@ -172,27 +165,3 @@ struct CustomButtonStyle: ButtonStyle {
 - **`scaleEffect(configuration.isPressed ? 0.85 : 1)`**: Scales down the button to 85% of its size when pressed, providing a visual feedback.
 - **`animation(Animation.easeIn(duration: 0.4), value: 0.2)`**: Applies an easing in animation with a duration of 0.4 seconds for the scale effect.
 
-## Usage
-
-To use the `CustomButtonStyle`, apply it to a `Button` view using the `.buttonStyle()` modifier. For example:
-
-```swift
-Button(action: {
-    // Button action
-}) {
-    Text("Press Me")
-}
-.buttonStyle(CustomButtonStyle(color: .blue, width: 150, height: 50))
-```
-
-### Parameters
-
-- **`color`**: Defines the background color of the button.
-- **`width`**: Defines the width of the button.
-- **`height`**: Defines the height of the button.
-
-## Notes
-
-- **Animation Duration**: The `animation` modifier can be customized or removed based on the desired animation effect. The current setup uses an easing in animation over 0.4 seconds.
-- **Scaling Effect**: The `scaleEffect` modifier provides visual feedback by shrinking the button slightly when pressed. Adjust the scale factor if a different visual effect is desired.
-- **Styling**: The `clipShape(Capsule())` and `cornerRadius` modifiers may overlap. Typically, `clipShape` is sufficient for achieving rounded button shapes, so the `cornerRadius` may be removed if not needed.
