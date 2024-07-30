@@ -5,7 +5,7 @@ weight: 0
 
 # API's Documentation
 
-This document provides a detailed overview of the `APIService` class for an iOS app, covering API structure, endpoints, request methods, parameters, and expected responses. It includes information on accessing, updating, and retrieving data from AWS and Firebase Firestore databases, as well as authentication and error handling. For additional details or updates, refer to the AWS and Firebase Firestore documentation.
+This section provides a detailed overview of the related classes for an iOS app, covering API structure, endpoints, request methods, parameters, and expected responses. It includes information on accessing, updating, and retrieving data from AWS and Firebase Firestore databases, as well as authentication and error handling. For additional details or updates, refer to the AWS and Firebase Firestore documentation.
 
 ## API Structure
 
@@ -33,4 +33,3 @@ This document provides a detailed overview of the `APIService` class for an iOS 
 - **Tokens**: Use Google API service account.
 
 
-This documentation provides a comprehensive overview of the API endpoints for interacting with AWS and Firebase Firestore. It covers authentication, request/response formats, and error handling. For further details or updates, refer to the respective AWS and Firebase Firestore documentation.

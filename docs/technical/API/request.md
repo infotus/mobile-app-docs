@@ -50,7 +50,7 @@ func getUserProfile(token: String) async throws -> [Route129Response]
 
 ##### Response
 
-- **Success:** Returns an array of `Route129Response` containing user profile information.
+- **Success:** Returns an array of `Route129Response` containing user profile information. Check [this](response.md#route129response) for more details about response.
 - **Failure:** Throws errors based on response status codes or data issues.
 
 ##### Error Handling
@@ -76,7 +76,7 @@ func getLoginDatas(email: String, password: String, completion: @escaping (Resul
 
 ##### Response
 
-- **Success:** Array containing user ID, nickname, and token.
+- **Success:** Array containing user ID, nickname, and token respectively.
 - **Failure:** Throws `AuthenticationError` if login fails.
 
 ##### Error Handling
@@ -156,7 +156,7 @@ func sendCheerDeductionInformations(user_id: String, token: String, quantity: In
 
 ##### Response
 
-- **Success:** Returns `Route602Response` with deduction details.
+- **Success:** Returns `Route602Response` with deduction details. Check [this](response.md#route602response) for more details. 
 - **Failure:** Throws `PathError` for issues with request or response.
 
 ##### Error Handling
@@ -206,7 +206,7 @@ func getFollowListCount(user_id: String, token: String) async throws -> Route196
 
 ##### Response
 
-- **Success:** Returns `Route196Response` with follow list count.
+- **Success:** Returns `Route196Response` with follow list count. Check [this](response.md#route196response) for more details.
 - **Failure:** Throws errors based on response status codes or data issues.
 
 ##### Error Handling
@@ -232,7 +232,7 @@ func getLastStreaming(user_id: String, token: String) async throws -> Route603Re
 
 ##### Response
 
-- **Success:** Returns `Route603Response` with last streaming date.
+- **Success:** Returns `Route603Response` with last streaming date. Check [this](response.md#route603response) for more details.
 - **Failure:** Throws errors based on response status codes or data issues.
 
 ##### Error Handling
@@ -258,7 +258,7 @@ func getWatchedStreams(user_id: String, token: String) async throws -> [Route604
 
 ##### Response
 
-- **Success:** Returns an array of `Route604Response` with watched streams.
+- **Success:** Returns an array of `Route604Response` with watched streams.Check [this](response.md#route604response) for more details.
 - **Failure:** Throws errors based on response status codes or data issues.
 
 ##### Error Handling
@@ -284,7 +284,7 @@ func getLastGiftSend(user_id: String, token: String) async throws -> Route605Res
 
 ##### Response
 
-- **Success:** Returns `Route605Response` with last gift sent details.
+- **Success:** Returns `Route605Response` with last gift sent details.Check [this](response.md#route605response) for more details.
 - **Failure:** Throws errors based on response status codes or data issues.
 
 ##### Error Handling
@@ -294,9 +294,13 @@ func getLastGiftSend(user_id: String, token: String) async throws -> Route605Res
 - `PathError.custom`: Custom error message for server issues
 
 
-###  .sendMessageToDevice()
+### Firebase API's Endpoints
 
-This function in `FirebaseUserInfoViewModel` observable script.
+This function is in the `NotificationManager` observable script. This class is a `@MainActor` class so functions in this class take precedence over class functions. 2 api handled it by NotificationManager 
+
+####  `sendMessageToDevice()`
+
+
 The `sendMessageToDevice` function is designed to send push notifications to all devices subscribed to the "ios_platform" topic using Firebase Cloud Messaging (FCM). It constructs and sends a notification payload to FCM's messaging endpoint. 
 
 ##### Function Signature
@@ -365,6 +369,82 @@ The request body is a JSON object with the following structure:
 For more details about FCM and its notification payload structure, refer to the [Firebase Cloud Messaging Documentation](https://firebase.google.com/docs/cloud-messaging).
 
 
+### `updateAccessToken()`
+
+The `updateAccessToken()` function asynchronously retrieves a new API access token using a service account. This function is used to refresh or obtain a new token that grants access to various services and APIs.
+
+#### Method Declaration
+```swift
+func updateAccessToken() async
+```
+
+#### Description
+This method performs the following steps:
+
+1. Defines the scope required for the API access.
+2. Prepares the service account credentials in JSON format.
+3. Initializes a `ServiceAccountTokenProvider` with the credentials and scope.
+4. Attempts to obtain an access token.
+5. Updates the `accessToken` property with the new token if successful, or logs any errors encountered.
+
+#### Parameters
+This function does not take any parameters.
+
+#### Return Type
+This function does not return any value.
+
+#### Detailed Steps
+
+**Define Scope and Credentials**:
+
+  - `scope`: An array of strings specifying the scopes needed.
+  - `json`: An array containing the service account credentials in JSON format.
+
+**Serialize JSON Data**:
+  
+  - Convert the `json` object to `Data` using `JSONSerialization`.
+
+**Initialize Token Provider**:
+   
+  - Create an instance of `ServiceAccountTokenProvider` with the JSON data and scope.
+
+**Obtain Access Token**:
+
+  - Call the `withToken` method on the `client` instance.
+  - Handle any errors encountered during the token retrieval.
+
+**Update Token**:
+    
+  - If no errors are encountered, update the `accessToken` property with the new token.
+
+**Error Handling**:
+    
+  - Print error messages if exceptions occur during JSON serialization or token retrieval.
+
+#### Error Handling
+
+**JSON Serialization Errors**:
+
+  - Errors during the conversion of the JSON object to `Data` are caught and logged.
+
+**Token Retrieval Errors**:
+  
+  - Errors encountered while retrieving the token are handled within the completion handler of `withToken`.
+
+
+#### Notes
+
+- The `accessToken` property should be declared in the class where this function is used.
+- Ensure that the `ServiceAccountTokenProvider` and its methods (e.g., `withToken`) are correctly implemented and handle tokens as expected.
+- The `scope` and `json` variables need to be properly configured based on the specific API requirements and service account credentials.
+
+#### Dependencies
+
+- Ensure you have the necessary imports and dependencies for handling JSON serialization and asynchronous tasks.
+- The `ServiceAccountTokenProvider` class must be correctly defined and accessible within your project.
+
+
+
 ### ServiceAccountTokenProvider
 
 The `ServiceAccountTokenProvider` class is used to manage and provide OAuth 2.0 tokens for service accounts. It constructs and sends a JWT (JSON Web Token) to the OAuth 2.0 token endpoint to obtain an access token. This class relies on service account credentials and RSA private keys for authentication.
@@ -380,41 +460,49 @@ The `ServiceAccountTokenProvider` class is used to manage and provide OAuth 2.0 
 
 ##### Initializers
 
-1. **`init?(credentialsData: Data, scopes: [String])`**
+**`init?(credentialsData: Data, scopes: [String])`**
 
-   Initializes the provider with service account credentials and required scopes.
+  Initializes the provider with service account credentials and required scopes.
 
-   - **Parameters:**
-     - `credentialsData`: Data containing the service account credentials in JSON format.
-     - `scopes`: Array of strings representing the scopes required for the token.
-   - **Returns:**
-     - An optional `ServiceAccountTokenProvider` instance.
+  **Parameters:**
 
-2. **`init?(credentialsURL: URL, scopes: [String])`**
+  - `credentialsData`: Data containing the service account credentials in JSON format.
+  - `scopes`: Array of strings representing the scopes required for the token.
+  
+  **Returns:**
+
+  - An optional `ServiceAccountTokenProvider` instance.
+
+**`init?(credentialsURL: URL, scopes: [String])`**
 
    Initializes the provider with service account credentials loaded from a URL and required scopes.
 
-   - **Parameters:**
-     - `credentialsURL`: URL pointing to a JSON file containing the service account credentials.
-     - `scopes`: Array of strings representing the scopes required for the token.
-   - **Returns:**
-     - An optional `ServiceAccountTokenProvider` instance.
+  **Parameters:**
+
+  - `credentialsURL`: URL pointing to a JSON file containing the service account credentials.
+  - `scopes`: Array of strings representing the scopes required for the token.
+  
+  **Returns:**
+
+  - An optional `ServiceAccountTokenProvider` instance.
 
 ##### Methods
 
 **`withToken(_ callback: @escaping (Token?, Error?) -> Void) throws`**
 
-   Requests a new OAuth 2.0 token by sending a JWT to the token endpoint.
+  Requests a new OAuth 2.0 token by sending a JWT to the token endpoint.
 
-   - **Parameters:**
+**Parameters:**
 
-        - `callback`: A closure that is called with the resulting token or an error.
-   - **Throws:**
+  - `callback`: A closure that is called with the resulting token or an error.
+  
+  **Throws:**
 
-        - Errors may be thrown during JWT encoding or HTTP request execution.
-   - **Returns:**
+  - Errors may be thrown during JWT encoding or HTTP request execution.
+  
+  **Returns:**
 
-        - This method does not return a value directly. Instead, the result is passed to the callback.
+  - This method does not return a value directly. Instead, the result is passed to the callback.
 
 #### Internal Structures
 
@@ -422,20 +510,21 @@ The `ServiceAccountTokenProvider` class is used to manage and provide OAuth 2.0 
 
 Represents the service account credentials required for authentication.
 
-- **Properties:**
+**Properties:**
 
-    - `CredentialType`: Type of credential (e.g., "service_account").
-    - `ProjectId`: Google Cloud project ID.
-    - `PrivateKeyId`: ID of the private key.
-    - `PrivateKey`: The private key used to sign the JWT.
-    - `ClientEmail`: Email associated with the service account.
-    - `ClientID`: Client ID for the service account.
-    - `AuthURI`: URI for authentication.
-    - `TokenURI`: URI for token exchange.
-    - `AuthProviderX509CertURL`: URL for the authentication provider's X.509 certificate.
-    - `ClientX509CertURL`: URL for the client's X.509 certificate.
+- `CredentialType`: Type of credential (e.g., "service_account").
+- `ProjectId`: Google Cloud project ID.
+- `PrivateKeyId`: ID of the private key.
+- `PrivateKey`: The private key used to sign the JWT.
+- `ClientEmail`: Email associated with the service account.
+- `ClientID`: Client ID for the service account.
+- `AuthURI`: URI for authentication.
+- `TokenURI`: URI for token exchange.
+- `AuthProviderX509CertURL`: URL for the authentication provider's X.509 certificate.
+- `ClientX509CertURL`: URL for the client's X.509 certificate.
 
-- **Coding Keys:**
+**Coding Keys:**
+  
   - Mapped to JSON fields in the service account credentials JSON.
 
 
@@ -444,19 +533,19 @@ For further details about JWT, OAuth 2.0, and service account credentials, refer
 
 #### Error Types
 
-##### PathError
+##### Path Error
 
 - `custom(errorMessage: String)`: Custom error with a message
 - `noData`: No data received from the server
 - `invalidUrl`: Invalid URL or endpoint
 - `decodingError`: Error decoding the response
 
-##### AuthenticationError
+##### Authentication Error
 
 - `custom(errorMessage: String)`: Custom authentication error
 - `invalidCredentials`: Invalid credentials provided
 
-##### PurchaseError
+##### Purchase Error
 
 - `invalidUrl`: Invalid URL for purchase decryption
 - `invalidKey`: Invalid key provided
