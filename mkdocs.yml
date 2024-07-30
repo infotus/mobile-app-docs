@@ -5,8 +5,6 @@ plugins:
   - mkdocs-nav-weight:
       section_renamed: true
 
-
-
 extra:
   generator: false
   social:
