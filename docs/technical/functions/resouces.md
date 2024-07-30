@@ -150,6 +150,7 @@ struct CustomButtonStyle: ButtonStyle {
 ```
 
 ### Method
+
 - **`makeBody(configuration:)`**: A required method for conforming to the ButtonStyle protocol in SwiftUI. It creates and returns a view that represents the style of a button, based on the current configuration.
 - **`configuration`**: Provides context for the button’s current state, including whether it is pressed.
 
@@ -164,4 +165,71 @@ struct CustomButtonStyle: ButtonStyle {
 - **`cornerRadius(10)`**: Adds rounded corners with a radius of 10 to the button.
 - **`scaleEffect(configuration.isPressed ? 0.85 : 1)`**: Scales down the button to 85% of its size when pressed, providing a visual feedback.
 - **`animation(Animation.easeIn(duration: 0.4), value: 0.2)`**: Applies an easing in animation with a duration of 0.4 seconds for the scale effect.
+
+
+## `KeyboardObserver`
+
+The `KeyboardObserver` class monitors the keyboard's height and updates a published property accordingly. It conforms to the `ObservableObject` protocol, allowing SwiftUI views to react to changes in keyboard height.
+
+A class that observes keyboard visibility and height changes, updating a published property to reflect the current keyboard height.
+
+### Properties
+
+**`@Published var keyboardHeight: CGFloat`**: 
+
+- Represents the current height of the keyboard. Initialized to a default value based on a percentage of the screen height (`UIScreen.main.bounds.height * 0.39`).
+
+### Initializer
+
+**`init()`**:
+
+- Calls `listenForKeyboardNotifications()` to start observing keyboard notifications.
+
+### Methods
+
+**`private func listenForKeyboardNotifications()`**:
+
+- Registers for keyboard notifications (`UIResponder.keyboardDidShowNotification`).
+- Updates `keyboardHeight` when the keyboard appears, using the height from the keyboard's frame obtained from the notification.
+
+
+#### Notes
+
+- **Default Value**: The default keyboard height is set to 39% of the screen's height.
+- **Notification Handling**: Only updates the `keyboardHeight` when the keyboard is shown. If you need to handle keyboard hiding, consider adding a listener for `UIResponder.keyboardDidHideNotification`.
+
+
+
+## `ChatBubble`
+
+The `ChatBubble` struct defines a custom shape for a chat bubble in SwiftUI. It customizes the shape's corners based on the sender of the message (`myMsg`), creating a distinct appearance for incoming and outgoing messages.
+
+A struct conforming to the `Shape` protocol, used to create a chat bubble with customizable rounded corners.
+
+### Properties
+
+**`var myMsg: Bool`**:
+
+- A boolean indicating whether the message is sent by the current user (`true` for my message, `false` for received message). Determines which corners of the chat bubble are rounded.
+
+### Implementation
+
+```swift
+func path(in rect: CGRect) -> Path {
+    let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.topLeft, .topRight, myMsg ? .bottomLeft : .bottomRight], cornerRadii: CGSize(width: 15, height: 15))
+    
+    return Path(path.cgPath)
+}
+```
+
+### Methods
+
+**`func path(in rect: CGRect) -> Path`**:
+
+- Creates a `Path` representing the chat bubble's shape.
+- Uses `UIBezierPath` to define the rounded rectangle with specific corners rounded based on the `myMsg` property.
+- The corners are rounded as follows:
+    - **Top Left and Top Right**: Always rounded.
+    - **Bottom Left**: Rounded if `myMsg` is `true`.
+    - **Bottom Right**: Rounded if `myMsg` is `false`.
 
