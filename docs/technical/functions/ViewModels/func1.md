@@ -1,5 +1,5 @@
 ---
-title: "FirebaseUserInfoViewModel"
+title: "Firebase User Info"
 weight: 0
 ---
 
