@@ -612,13 +612,13 @@ This script provides various utility functions for managing user data and reward
 timeString(time: Int) -> String
 ```
 
-**Description:** Converts an integer value representing seconds into a formatted time string (HH:mm:ss).
+**Description:** Converts an integer value representing seconds into a formatted time string (HH : mm : ss).
 
 **Parameters:**
 
 - `time`: An `Int` representing the number of seconds to be converted.
 
-**Returns:** A `String` in the format "HH:mm:ss".
+**Returns:** A `String` in the format "HH : mm : ss".
 
 #### Reset the Consecutive Login
 ```swift
