@@ -12,6 +12,7 @@ weight: 1
 
 ### `BG_Theme_Type`
 An enum representing the type of background theme:
+
 - `Image`: Represents a background theme that uses an image.
 - `Color`: Represents a background theme that uses a color.
 
