@@ -27,7 +27,9 @@ The `FirebaseUserInfoViewModel` class handles user information management using 
 
 ### AUTHORIZATION FUNCTIONS
 
-#### `checkUser(userId: String, completion: @escaping (Bool) -> Void)`
+#### Check User ID 
+
+- **`checkUser(userId: String, completion: @escaping (Bool) -> Void)`**
 
 Checks if a user exists in the Firestore database based on the provided user ID.
 
@@ -42,7 +44,8 @@ Checks if a user exists in the Firestore database based on the provided user ID.
 - Searches for documents where the field `userID` matches the provided `userId`.
 - Calls `completion(true)` if a matching document is found, otherwise `completion(false)`.
 
-#### `firebaseCreateUser_Login(email: String, password: String, userID: String)`
+#### Create New User 
+- **`firebaseCreateUser_Login(email: String, password: String, userID: String)`**
 
 Creates a new user with specified email and password, and initializes user data in Firestore.
 
@@ -57,7 +60,8 @@ Creates a new user with specified email and password, and initializes user data 
 - Creates a new user using Firebase Authentication.
 - Calls `saveUserInformation` to store the user's initial data in Firestore.
 
-#### `firebaseSignIn(email: String, password: String)`
+#### SignIn the Firebase  
+- **`firebaseSignIn(email: String, password: String)`**
 
 Signs in a user with specified email and password.
 
@@ -71,7 +75,8 @@ Signs in a user with specified email and password.
 - Signs in the user using Firebase Authentication.
 - Updates the daily login date and resets the consecutive login counter.
 
-#### `deleteFirebaseAccount() async`
+#### Withdraw the Account 
+- **`deleteFirebaseAccount() async`**
 
 Deletes the current user's Firebase account and associated Firestore document.
 

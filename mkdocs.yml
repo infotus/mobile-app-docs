@@ -59,6 +59,7 @@ theme:
       - ViewModel: 
         - technical/functions/viewmodels/func1.md
         - technical/functions/viewmodels/func2.md
+        - technical/functions/viewmodels/func3.md
 
     - Other: technical/other.md
 
