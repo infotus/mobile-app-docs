@@ -28,8 +28,9 @@ The `FirebaseUserInfoViewModel` class handles user information management using 
 ### AUTHORIZATION FUNCTIONS
 
 #### Check User ID 
-
-- **`checkUser(userId: String, completion: @escaping (Bool) -> Void)`**
+```swift
+checkUser(userId: String, completion: @escaping (Bool) -> Void)
+```
 
 Checks if a user exists in the Firestore database based on the provided user ID.
 
@@ -45,7 +46,9 @@ Checks if a user exists in the Firestore database based on the provided user ID.
 - Calls `completion(true)` if a matching document is found, otherwise `completion(false)`.
 
 #### Create New User 
-- **`firebaseCreateUser_Login(email: String, password: String, userID: String)`**
+```swift
+firebaseCreateUser_Login(email: String, password: String, userID: String)
+```
 
 Creates a new user with specified email and password, and initializes user data in Firestore.
 
@@ -61,7 +64,9 @@ Creates a new user with specified email and password, and initializes user data 
 - Calls `saveUserInformation` to store the user's initial data in Firestore.
 
 #### SignIn the Firebase  
-- **`firebaseSignIn(email: String, password: String)`**
+```swift
+firebaseSignIn(email: String, password: String)
+```
 
 Signs in a user with specified email and password.
 
@@ -76,7 +81,10 @@ Signs in a user with specified email and password.
 - Updates the daily login date and resets the consecutive login counter.
 
 #### Withdraw the Account 
-- **`deleteFirebaseAccount() async`**
+```swift
+deleteFirebaseAccount() async
+```
+
 
 Deletes the current user's Firebase account and associated Firestore document.
 
@@ -136,7 +144,10 @@ Saves new user information to Firestore.
 
 ### UPDATE SERVER VALUES
 
-#### `updateFCMToken(fcmToken: String) async`
+#### FCM Token
+```swift
+updateFCMToken(fcmToken: String) async
+```
 
 Updates the Firebase Cloud Messaging (FCM) token for the current user in Firestore.
 
@@ -150,7 +161,10 @@ Updates the Firebase Cloud Messaging (FCM) token for the current user in Firesto
 - Attempts to update the FCM token in Firestore under the `fcmToken` field.
 - Handles errors by printing the error message if the update fails.
 
-#### `updateExpBooster(dayIncrease: Int)`
+#### Exp Booster  
+```swift
+updateExpBooster(dayIncrease: Int)
+```
 
 Updates the `expBoosterEndDay` value in Firestore based on the given number of days to increase.
 
@@ -166,7 +180,10 @@ Updates the `expBoosterEndDay` value in Firestore based on the given number of d
 - Updates the `expBoosterEndDay` field in Firestore with the new expiration date.
 - Handles errors by printing an error message if the update fails.
 
-#### `updateOwnedItemsList(item: String)`
+#### Owned Item List
+```swift
+ updateOwnedItemsList(item: String)
+```
 
 Adds a new item to the user's list of owned items in Firestore.
 
@@ -182,7 +199,10 @@ Adds a new item to the user's list of owned items in Firestore.
 - Updates the `ownedItems` field in Firestore with the new list of owned items.
 - Handles errors by printing an error message if the update fails.
 
-#### `updateLevel()`
+#### Level Up 
+```swift
+updateLevel()
+```
 
 Updates the user's level, logo, and experience points based on the current level and experience.
 
@@ -196,7 +216,10 @@ Updates the user's level, logo, and experience points based on the current level
 - Fetches and updates the new level logo.
 - Handles errors by printing appropriate messages if any operations fail.
 
-#### `updateExpPoint(addExpPoint: Int)`
+#### Exp Point
+```swift
+updateExpPoint(addExpPoint: Int)
+```
 
 Increases the user's total experience points in Firestore.
 
@@ -210,7 +233,10 @@ Increases the user's total experience points in Firestore.
 - Updates the `totalExp` field in Firestore by incrementing it with the specified number of experience points.
 - Handles errors by printing an error message if the update fails.
 
-#### `updateShopPoints(newShopPoint: Int)`
+#### Shop Point 
+```swift
+updateShopPoints(newShopPoint: Int)
+```
 
 Updates the user's shop points in Firestore.
 
@@ -225,7 +251,10 @@ Updates the user's shop points in Firestore.
 - Fetches the updated shop points from Firestore and updates the local `shopPoint` property.
 - Handles errors by printing an error message if the update fails.
 
-#### `updateDailyLogin()`
+#### Login Date
+```swift
+updateDailyLogin()
+```
 
 Updates the last login date and manages consecutive login and daily rewards based on the last login date.
 
@@ -238,7 +267,10 @@ Updates the last login date and manages consecutive login and daily rewards base
 - Updates the `lastLogin` field in Firestore with the current date.
 - Handles errors by printing an error message if the update fails.
 
-#### `updateMissionRewards(newArray: Array<Bool>)`
+#### Missions Reward Collected Status
+```swift
+updateMissionRewards(newArray: Array<Bool>)
+```
 
 Updates the status of mission rewards in Firestore.
 
@@ -252,7 +284,10 @@ Updates the status of mission rewards in Firestore.
 - Updates the `missionRewards` field in Firestore with the new array of reward statuses.
 - Handles errors by printing an error message if the update fails.
 
-#### `updateDailyRewards(value: Bool)`
+#### Daily Reward Collected Status
+```swift
+updateDailyRewards(value: Bool)
+```
 
 Updates the daily reward status for the user in Firestore.
 
@@ -266,7 +301,10 @@ Updates the daily reward status for the user in Firestore.
 - Updates the `dailyReward` field in Firestore with the specified value.
 - Handles errors by printing an error message if the update fails.
 
-#### `updateConsecutiveLogin(increment: Int)`
+#### Consecutive Login
+```swift
+updateConsecutiveLogin(increment: Int)
+```
 
 Updates the consecutive login count in Firestore based on the provided increment value.
 
@@ -281,7 +319,10 @@ Updates the consecutive login count in Firestore based on the provided increment
 - Fetches and updates the local `cons_login_value` property.
 - Handles errors by printing an error message if the update fails.
 
-#### `addBlockedUserList(uuid: String)`
+#### Blocked User List - Add
+```swift
+addBlockedUserList(uuid: String)
+```
 
 Adds a user ID to the blocked users list in Firestore.
 
@@ -297,7 +338,10 @@ Adds a user ID to the blocked users list in Firestore.
 - Updates the `blockedUsers` field in Firestore with the new list.
 - Handles errors by printing an error message if the update fails.
 
-#### `removeBlockedUserList(uuid: String)`
+#### Blocked User List - Remove
+```swift
+removeBlockedUserList(uuid: String)
+```
 
 Removes a user ID from the blocked users list in Firestore.
 
@@ -313,7 +357,10 @@ Removes a user ID from the blocked users list in Firestore.
 - Updates the `blockedUsers` field in Firestore with the updated list.
 - Handles errors by printing an error message if the update fails.
 
-#### `addHiddenChatList(uuid: String)`
+#### Hidden Message List - Add
+```swift
+addHiddenChatList(uuid: String)
+```
 
 Adds a user ID to the hidden messages list in Firestore.
 
@@ -329,7 +376,10 @@ Adds a user ID to the hidden messages list in Firestore.
 - Updates the `hiddenMsgs` field in Firestore with the new list.
 - Handles errors by printing an error message if the update fails.
 
-#### `removeHiddenChatList(uuid: String)`
+#### Hidden Message List - Remove
+```swift
+removeHiddenChatList(uuid: String)
+```
 
 Removes a user ID from the hidden messages list in Firestore.
 
@@ -348,8 +398,13 @@ Removes a user ID from the hidden messages list in Firestore.
 
 ### GET SERVER VALUES
 
-#### `getUserData(parameterName:completion:)`
+#### User Data Value - Handler 
+```swift
+getUserData(parameterName:completion:)
+```
+
 **Description:** 
+
 Fetches a specific piece of data for the current user from the `users` collection in Firebase Firestore. The data is identified by the parameter name provided. 
 
 **Parameters:**
@@ -363,7 +418,11 @@ This function retrieves data asynchronously from the Firestore database and pass
 **Note:**
 Becarefull when use this method if parameter is not match app will crash. Check the [paramters](../../databases/models/userinfomodel.md#userinfomodel-structure)
 
-#### `getUserDatas(parameterName:)`
+#### User Data Value - Async 
+```swift 
+getUserDatas(parameterName:)
+```
+
 **Description:** 
 
 Asynchronously retrieves a specific piece of data for the current user from the `users` collection in Firebase Firestore, using async/await syntax.
@@ -382,8 +441,13 @@ Becarefull when use this method if parameter is not match app will crash. Check 
 **Usage:** 
 Use this method to asynchronously fetch user data. It returns the value directly or throws an error if fetching fails.
 
-#### `getLevelData(level:parameterName:completion:)`
+#### Level Parameters
+```swift
+getLevelData(level:parameterName:completion:)
+```
+
 **Description:** 
+
 Fetches a specific piece of data related to a particular level from the `levels` collection in Firebase Firestore.
 
 **Parameters:**
@@ -395,22 +459,38 @@ Fetches a specific piece of data related to a particular level from the `levels`
 **Usage:** 
 This function is used to fetch data about game levels and pass the result to a completion handler.
 
-#### `getCurrentLevelData()`
+#### Current Level 
+```swift 
+getCurrentLevelData()
+```
+
 **Description:** 
+
 Retrieves the current user's level information, including the level logo, level cap, total experience points, and consecutive login value.
 
 **Usage:** 
 Calls `getUserData` and `getLevelData` to gather and update all relevant level and user experience information.
 
-#### `getDailyInformation()`
+#### Daily Infromation
+```swift 
+getDailyInformation()
+```
+
 **Description:** 
+
 Retrieves and updates the status of daily rewards and mission rewards for the current user.
 
 **Usage:** 
+
 Fetches daily and mission rewards data from Firebase and updates local properties accordingly.
 
-#### `getRemainingTime(completion:)`
+#### Exp Booster Remaning Time
+```swift
+getRemainingTime(completion:)
+```
+
 **Description:** 
+
 Calculates the remaining time for an active booster and returns it in seconds. The booster end date is fetched and compared to the current date.
 
 **Parameters:**
@@ -418,10 +498,16 @@ Calculates the remaining time for an active booster and returns it in seconds. T
 - `completion`: A closure that is called with the remaining time in seconds.
 
 **Usage:** 
+
 Fetches the expiration date of a booster, calculates the remaining time, and returns it via the completion handler.
 
-#### `isLoggedInSameDay() -> Bool`
+#### Compare Last Login Date 
+```swift
+isLoggedInSameDay() -> Bool
+```
+
 **Description:** 
+
 Determines if the last login day is the same as the current day.
 
 **Returns:**
@@ -429,10 +515,16 @@ Determines if the last login day is the same as the current day.
 - `Bool`: `true` if the user logged in today, `false` otherwise.
 
 **Usage:** 
+
 Used to check if the user has logged in on the same day for reward or login tracking purposes.
 
-#### `isInBlockedList(uuid:)`
+#### Query - Blocked List
+```swift 
+isInBlockedList(uuid:) -> Bool
+```
+
 **Description:** 
+
 Checks if a specific user ID is present in the current user's blocked list.
 
 **Parameters:**
@@ -446,8 +538,13 @@ Checks if a specific user ID is present in the current user's blocked list.
 **Usage:** 
 Asynchronously checks if a user ID is blocked by querying the Firestore document.
 
-#### `isInHiddenMessagesList(uuid:)`
+#### Query - Hidden Message List
+```swift
+isInHiddenMessagesList(uuid:) -> Bool
+```
+
 **Description:** 
+
 Checks if a specific user ID is present in the current user's hidden messages list.
 
 **Parameters:**
@@ -461,8 +558,13 @@ Checks if a specific user ID is present in the current user's hidden messages li
 **Usage:** 
 Asynchronously checks if a user ID is hidden from the message list.
 
-#### `senderLevelLogo(uuid:)`
+#### Sender Level
+```swift
+senderLevelLogo(uuid:) -> String
+```
+
 **Description:** 
+
 Fetches the level logo for a given sender's user ID.
 
 **Parameters:**
@@ -474,10 +576,16 @@ Fetches the level logo for a given sender's user ID.
 - `String`: The level logo of the sender.
 
 **Usage:** 
+
 Asynchronously retrieves the level logo for a specific user by first fetching their level and then fetching the corresponding logo from the `levels` collection.
 
-#### `isUserOwnedItem(item_name:)`
+#### Query - Owned Item
+```swift
+isUserOwnedItem(item_name:) -> Bool
+```
+
 **Description:** 
+
 Checks if the current user owns a specific item.
 
 **Parameters:**
@@ -489,4 +597,173 @@ Checks if the current user owns a specific item.
 - `Bool`: `true` if the item is owned, `false` otherwise.
 
 **Usage:** 
+
 Asynchronously checks if a specific item is present in the user's list of owned items. If an error occurs or the item is not found, it returns `false`.
+
+
+<!-- ### Overview
+
+This script provides various utility functions for managing user data and rewards in a Swift application. It includes functionalities for converting time values, resetting login streaks, deleting messages, reporting users, retrieving mission rewards, and managing rewards based on user levels. It interacts with Firebase for data storage and retrieval. -->
+
+### OTHER 
+
+#### Time Converter
+```swift
+timeString(time: Int) -> String
+```
+
+**Description:** Converts an integer value representing seconds into a formatted time string (HH:mm:ss).
+
+**Parameters:**
+
+- `time`: An `Int` representing the number of seconds to be converted.
+
+**Returns:** A `String` in the format "HH:mm:ss".
+
+#### Reset the Consecutive Login
+```swift
+resetConsecutiveLogin()
+```
+
+**Description:** Resets the consecutive login count to zero if it exceeds a threshold. Updates the Firestore document for the current user.
+
+**Parameters:** None.
+
+**Usage:** This function is used to reset the consecutive login count when it exceeds 6 days.
+
+
+#### Remove Message
+```swift
+deleteMsg(uuid: String) async
+```
+
+**Description:** Deletes a message document from Firestore based on its UUID.
+
+**Parameters:**
+
+- `uuid`: A `String` representing the UUID of the message to be deleted.
+
+**Usage:** Use this function to remove a specific message from the Firestore database.
+
+#### Report the User
+```swift
+userReport(reason: String, report_uid: String, date: Date, msg_id: String)
+```
+
+**Description:** Reports a user to Firestore with the provided details.
+
+**Parameters:**
+
+- `reason`: A `String` explaining the reason for the report.
+- `report_uid`: The user ID of the reported user.
+- `date`: The date of the report.
+- `msg_id`: The ID of the message associated with the report.
+
+**Usage:** Use this function to report users for inappropriate behavior or other reasons.
+
+#### Mission Reward Status
+```swift
+getMissionRewardsValue(index: Int) async -> Bool
+```
+
+**Description:** Retrieves the mission rewards value at a specified index from user data.
+
+**Parameters:**
+
+- `index`: An `Int` representing the index of the mission rewards array.
+
+**Returns:** A `Bool` indicating the reward status at the specified index.
+
+
+#### Download Url List
+```swift
+getListDownloadLinks(path: String) async -> [String]
+```
+
+**Description:** Retrieves a list of download links for items stored in Firebase Storage at a specified path. Mainly create get emoji and animated emoji download url list.
+
+**Parameters:**
+
+- `path`: A `String` representing the path in Firebase Storage.
+
+**Returns:** An array of `String` representing the download URLs for the items.
+
+
+#### Get Level Reward 
+```swift
+getLevelReward(level: Int)
+```
+
+**Description:** Grants a reward based on the user's level. Different rewards are given for different levels.
+
+**Parameters:**
+
+- `level`: An `Int` representing the user's current level.
+
+**Usage:** Call this function when the user reaches a new level to grant appropriate rewards.
+
+#### Reward Functions
+
+##### Level 2
+```swift
+levelLabelReward()
+```
+**Description:** Activates a level label for level 2 reward.
+  
+##### Level 5
+```swift
+randomItemReward()
+```
+
+**Description:** Grants a random background color at level 5.
+
+##### Level 10
+```swift
+doubleEXPReward()
+```
+
+**Description:** Grants a 3-day experience multiplier at level 10.
+
+##### Level 15
+```swift
+uiSkinRewards()
+```
+
+**Description:** Grants a random UI skin at level 15.
+
+
+##### Level 20
+```swift
+fontStyleReward()
+```
+
+**Description:** Grants a random font style at level 20.
+
+
+##### Level 25
+```swift
+emojiReward()
+```
+**Description:** Grants a random emoji at level 25.
+
+
+##### Level 30
+```swift
+animatedEmojiReward()
+```
+
+**Description:** Grants a random animated emoji at level 30.
+
+
+
+### Dependencies
+
+- **FirebaseManager**: Handles interactions with Firebase Authentication, Firestore, and Storage.
+- **UserInfoConstants**: Contains constants related to user information keys.
+- **FirebaseCollectionConstants**: Contains constants for Firestore collection names.
+- **ReasonsConstant**: Contains keys related to user report reasons.
+- **SettingBindingValues**: Manages user settings and values for rewards.
+- **FirebaseUserInfoViewModel**: Updates user information and owned items list.
+- **AccountServiceViewModel**: Manages in-app purchases and boosters.
+- **Url_Lists**: Contains lists of URL constants for emojis and other resources.
+

@@ -3,14 +3,15 @@ title: "Setting Values"
 weight: 1
 ---
 
-
 # Technical Documentation for `SettingBindingValues`
 
 `SettingBindingValues` is an `ObservableObject` class designed for managing and binding various user settings in a SwiftUI application. It handles background themes, button styles, font styles, and other customizable settings. It also interacts with Firebase to fetch and update user-owned items.
 
 ## Enum
 
-### `BG_Theme_Type`
+### Background Theme Type
+`BG_Theme_Type`
+
 An enum representing the type of background theme:
 
 - `Image`: Represents a background theme that uses an image.
@@ -18,7 +19,8 @@ An enum representing the type of background theme:
 
 ## Class
 
-### `SettingBindingValues`
+### SettingBindingValues
+
 `SettingBindingValues` is an `ObservableObject` that holds various properties related to user settings and customization options. The class includes functionality to update and manage settings such as backgrounds, buttons, and fonts. It also interacts with Firebase to synchronize user data.
 
 #### Properties
@@ -58,7 +60,11 @@ An enum representing the type of background theme:
 
 #### Methods
 
-##### **`getBackgroundType(name: String) -> BG_Theme_Type`**
+#####  Get Background Type
+
+```swift
+getBackgroundType(name: String) -> BG_Theme_Type
+```
 
 **Description:** Determines whether the specified background name corresponds to an image or a color.
 
@@ -68,7 +74,10 @@ An enum representing the type of background theme:
 
 **Returns:** `BG_Theme_Type` indicating the type of the background.
 
-##### **`changeButtonStyle(name: String)`**
+##### Button Style
+```swift
+changeButtonStyle(name: String)
+```
 
 **Description:** Changes the button style based on the specified name.
 
@@ -76,7 +85,10 @@ An enum representing the type of background theme:
 
 - `name`: The name of the button style to apply.
   
-##### **`changeBackgroundTheme(name: String)`**
+##### Background Theme
+```swift
+changeBackgroundTheme(name: String)
+```
 
 **Description:** Changes the background theme based on the specified name.
 
@@ -84,7 +96,10 @@ An enum representing the type of background theme:
 
 - `name`: The name of the background theme to apply.
 
-##### `changeFontColor(name: String)`
+##### Font Color
+```swift
+changeFontColor(name: String)
+```
 
 **Description:** Changes the font color based on the specified name.
 
@@ -92,14 +107,21 @@ An enum representing the type of background theme:
 
 - `name`: The name of the font color to apply.
 
-##### `changeFontStyle(name: String)`
+##### Font Style
+```swift
+changeFontStyle(name: String)
+```
 
 **Description:** Changes the font style based on the specified name.
 
 **Parameters:**
+
 - `name`: The name of the font style to apply.
 
-##### `getOwnedItemList()`
+##### Owned Items
+```swift
+getOwnedItemList()
+```
 
 **Description:** Fetches the list of items owned by the current user from Firebase and updates local properties accordingly.
 
