@@ -3,3 +3,4 @@ mkdocs-material>=9.5
 mkdocs-open-in-new-tab>=1.0 
 mkdocs-nav-weight>=0.2
 pymdown-extensions>=7.0
+pygments>=2.4

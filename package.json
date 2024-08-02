@@ -1,5 +1,5 @@
 {
-    "name": "mobile-app-docs",
+    "name": "@infotus/mobile-app-docs",
     "version": "1.0.0",
     "private": true,
     "scripts": {
